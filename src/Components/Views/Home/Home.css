@@ -15,8 +15,17 @@ body {
     height: 100%;
 }
 
+.main {
+  display: Flex;
+}
+
 h1 {
     font-size: 25px;
+}
+
+.logo {
+    width: 50%;
+    height: 50%;
 }
 
 p {
