@@ -2,15 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import Home from './Components/Views/Home/Home.jsx';
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
+import Home from './components/views/home/home.jsx';
+import Index from "./components/views/index/index.jsx";
+import Login from "./components/views/login/login.jsx";
+import SignUp from "./components/views/signUp/signUp.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/index",
+    element: <Index />,
+  },
+  {
+    path: "/signUp",
+    element: < SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
