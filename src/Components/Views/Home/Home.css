@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=League+Spartan');
+
+html, body {
+    font-family: 'League Spartan', sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: linear-gradient(to bottom, #FFFFFF, #FAE1E3);
+}
+
+body {
+    height: 100%;
+}
+
+.main {
+  display: Flex;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+.logo {
+    width: 50%;
+    height: 50%;
+}
+
+p {
+    font-size: 16px;
+}
+
+.seeallPuzzles {
+    background-color: #131212;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.seeallPuzzles:hover {
+    background-color: #000;
+}
