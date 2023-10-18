@@ -13,6 +13,7 @@ export default function Home() {
                 <SignUpButton />
                 <LogInButton />
             </header>
+            <h5>"hola home"</h5>
             <div className="mainHome">
                 
                 <div className="welcomeMessage">

@@ -15,6 +15,11 @@ html {
     background: linear-gradient(to top, #FAE1E3 20%, #FFFFFF 30%);
 }
 
+h5 {
+    font-weight: bold;
+    color: aqua;
+}
+
 body {
     height: 100%;
     margin: 20px;

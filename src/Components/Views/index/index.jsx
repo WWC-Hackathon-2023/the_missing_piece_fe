@@ -20,7 +20,6 @@ export default function Index() {
       </header>
       <div className="all">
       
-      
       <h2>Puzzles in Your Zip Code</h2>
 
       <div className="search-container">
@@ -42,8 +41,7 @@ export default function Index() {
           <div className="puzzleDescription">Puzzle description</div>
         </div>
       </Link>
-
-      
+     
       <div className="showMoreindex">
       <p>Continue exploring amazing puzzles</p>
       <button className="showMoreButton"> Show more</button>
