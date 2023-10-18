@@ -1,3 +1,5 @@
+/* Estilos para pantallas normales de PC */
+
 @import url('https://fonts.googleapis.com/css?family=League+Spartan');
 
 html, body {
@@ -8,13 +10,8 @@ html, body {
 }
 
 html {
-    /* background: linear-gradient(to bottom, #FFFFFF, #FAE1E3); */
-
-    /* background: linear-gradient(to top, #FAE1E3, #FFFFFF); */
-
     background: linear-gradient(to top, #FAE1E3 20%, #FFFFFF 30%);
 }
-
 
 body {
     height: 100%;
@@ -22,18 +19,18 @@ body {
 }
 
 .headerHome {
-   text-align: right;
-   margin: 20px;
-   
+    text-align: right;
+    margin: 20px 100px 20px 20px;
 }
 
 .mainHome {
-  display: Flex;
-  margin: 20px;
+    display: flex;
+    margin: 20px;
 }
 
-.welcomeMessage{
+.welcomeMessage {
     width: 50%;
+    margin-left: 70px;
 }
 
 h1 {
@@ -42,17 +39,18 @@ h1 {
 }
 
 .logo {
-    width: 100%;
-    height: 100%;
+    margin-left: 40px;
+    width: 87%;
+    height: 87%;
 }
 
 p {
     font-size: 36px;
 }
 
-.ContainerLogo{
-align-content: center;
-width: 50%;
+.ContainerLogo {
+    align-content: center;
+    width: 50%;
 }
 
 .seeallPuzzlesButton {
@@ -69,4 +67,37 @@ width: 50%;
 
 h4 {
     text-align: center;
+}
+
+/* Media query para dispositivos Samsung iPhone XR (aproximadamente) */
+
+@media screen and (max-width: 414px) {
+    body {
+        margin: 10px;
+    }
+
+    .mainHome {
+        flex-direction: column;
+    }
+
+    .ContainerLogo {
+        width: 100%;
+    }
+
+    .welcomeMessage {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 24px;
+    }
+
+    .seeallPuzzlesButton {
+        font-size: 24px;
+        width: 100%;
+    }
 }
