@@ -1,5 +1,6 @@
 import React from 'react';
 import './navigationBar.css';
+import LogoutButton from "../../commonComponents/logoutButton/logoutButton.jsx";
 import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
@@ -25,6 +26,7 @@ export default function NavigationBar() {
             </Link>
           </li>
         </ul>
+        <LogoutButton />
       </nav>
     </>
   )
