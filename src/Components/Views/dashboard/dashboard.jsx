@@ -1,6 +1,5 @@
 import "./dashboard.css";
 import logo from "../../../assets/logo.png";
-import LogoutButton from "../../commonComponents/logoutButton/logoutButton.jsx";
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function Dashboard() {
@@ -13,7 +12,6 @@ export default function Dashboard() {
         </div>
         <div className="containerButtons">
           <NavigationBar />
-          <LogoutButton />
         </div>
       </header>
       <h1>"Hello Profile"</h1>
