@@ -29,6 +29,14 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  // {
+  //   path: "/myCollection",
+  //   element: <MyCollection />,
+  // },
+  // {
+  //   path: "/searchForPuzzles",
+  //   element: <SearchForPuzzles />,
+  // },
   {
     path: "/puzzleShowPage",
     element: <PuzzleShowPage />,
