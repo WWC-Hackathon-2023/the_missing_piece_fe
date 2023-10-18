@@ -1,19 +1,21 @@
 import "./home.css";
 import { Link } from 'react-router-dom';
-import LogInButton from "../../commonComponents/logInButton/logInButton.js";
-import SignUpButton from "../../commonComponents/signUpButton/signUpButton.js";
+import LogInButton from "../../commonComponents/logInButton/logInButton.jsx";
+import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
 import logo_title from "../../../assets/logo_title.png";
 
 export default function Home() {
+
+
     return (
         <>
-            <header>
+            <header className="headerHome">
                 <SignUpButton />
                 <LogInButton />
             </header>
-            <div className="main">
+            <div className="mainHome">
                 
-                <div className="all">
+                <div className="welcomeMessage">
                     <h1>Welcome To The Puzzle Community!</h1>
                     <p>If you have a collection of puzzles and you're eager to swap
                         them for new challenges, you're in the right spot. Join our community
@@ -21,7 +23,7 @@ export default function Home() {
                         Let's share the joy of solving puzzles together!
                     </p>
                     <Link to="/index">
-                        <button className="seeallPuzzles">See All Puzzles</button>
+                        <button className="seeallPuzzlesButton">See All Puzzles</button>
                     </Link>
                 </div>
 
@@ -30,8 +32,9 @@ export default function Home() {
                 </div>
                 
             </div>
+
             <footer>
-                <h1>© 2023 The Missing Piece Team</h1>
+                <h4>© 2023 The Missing Piece Team</h4>
             </footer>
         </>
     )

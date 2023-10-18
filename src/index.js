@@ -1,14 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createRoot } from 'react-dom/client';
-import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
-import Home from './components/views/home/home.jsx';
-import Index from "./components/views/index/index.jsx";
-import Login from "./components/views/login/login.jsx";
-import SignUp from "./components/views/signUp/signUp.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./Components/Views/home/home.jsx";
+import Index from "./Components/Views/index/index.jsx";
+import SignUp from "./Components/Views/signUp/signUp.jsx";
+import Login from "./Components/Views/login/login.jsx";
+import Dashboard from "./Components/Views/dashboard/dashboard.jsx"
+import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +25,15 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/puzzleShowPage",
+    element: <PuzzleShowPage />,
+  },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
