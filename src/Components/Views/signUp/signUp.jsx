@@ -1,11 +1,11 @@
 import "./signUp.css";
-import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
+import { Link } from 'react-router-dom';
 import background_pieces from "../../../assets/background_pieces.png";
 import logo from "../../../assets/logo.png";
 
 export default function SignUp() {
 
-  
+
   return (
     <>
       <div className="topDiv">
@@ -20,8 +20,9 @@ export default function SignUp() {
             <input className="emailInput" placeholder="e-mail"></input>
             <input className="phoneInput" placeholder="Phone"></input>
             <input className="passwordInput" placeholder="Password"></input>
-
-            <SignUpButton />
+            <Link to="/dashboard">
+            <button className="signUpButtonBlack">Sign Up</button>
+            </Link>
           </div>
         </div>
         <div className="rightSignup">

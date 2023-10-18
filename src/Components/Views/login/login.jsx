@@ -15,7 +15,7 @@ export default function Login() {
             <div className="leftLogin">
               <h1> Welcome to the Puzzle Community! </h1>
               <input className="emailInputLogin" placeholder="e-mail"></input>
-              <input className="passwordInputLogin" placeholder="password"></input>
+              <input className="passwordInputLogin" type="password" placeholder="password"></input>
               <LogInButton />
             </div>
           </div>
