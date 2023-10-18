@@ -1,6 +1,7 @@
 import "./dashboard.css";
 import logo from "../../../assets/logo.png";
 import LogoutButton from "../../commonComponents/logoutButton/logoutButton.jsx";
+import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function Dashboard() {
   return (
@@ -11,10 +12,7 @@ export default function Dashboard() {
           <img src={logo} className="imagelogo" alt="The Missing Piece" />
         </div>
         <div className="containerButtons">
-            <button>My Profile</button>
-            <button>My Request by Me</button>
-            <button>My Puzzles</button>
-            <button>Browse New Puzzles</button>
+          <NavigationBar />
           <LogoutButton />
         </div>
       </header>

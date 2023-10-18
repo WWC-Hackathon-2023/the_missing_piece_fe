@@ -34,8 +34,8 @@ const router = createBrowserRouter([
   //   element: <MyCollection />,
   // },
   // {
-  //   path: "/searchForPuzzles",
-  //   element: <SearchForPuzzles />,
+  //   path: "/searchPuzzles",
+  //   element: <SearchPuzzles />,
   // },
   {
     path: "/puzzleShowPage",
