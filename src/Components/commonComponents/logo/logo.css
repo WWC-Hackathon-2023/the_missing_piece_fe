@@ -1,0 +1,13 @@
+.mainLogo {
+  margin-left: 40px;
+  width: 87%;
+  height: 87%;
+}
+
+.mainLogo {
+  width: 10%;
+  height: 10%;
+  margin: 20px;
+  position: relative; 
+  z-index: 1;
+}
