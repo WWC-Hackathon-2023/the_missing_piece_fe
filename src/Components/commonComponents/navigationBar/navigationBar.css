@@ -3,21 +3,25 @@
   padding: 8px 16px; /* Ajusta el relleno según tus preferencias */
   border: none; /* Elimina el borde */
   background-color: transparent; /* Establece el fondo transparente */
-  color: #333; /* Color del texto para botones sin fondo */
+  color: black; /* Color del texto para botones sin fondo */
   cursor: pointer;
 }
 
 .nav-list {
   display: flex;
+  justify-content: space-between;
   align-items: center;
+
 }
 
 .nav-list ul {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
-  font-weight: bolder;
+  font-weight: 900;
+  font-size:x-large;
   align-content: center;
+  column-gap: 2rem;
 }
 
 .nav-list li {
