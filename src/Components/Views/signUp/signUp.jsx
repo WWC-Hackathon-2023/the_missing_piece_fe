@@ -1,22 +1,17 @@
 import "./signUp.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import background_pieces from "../../../assets/background_pieces.png";
-import HeaderLogout from"../../commonComponents/headerLogout/headerLogout.jsx";
-
+import Logo from "../../commonComponents/logo/logo.jsx";
 
 export default function SignUp() {
-
-
   return (
     <>
-    <header className="headerIndex">
-        < HeaderLogout />
-        
-      </header>
       <div className="topDiv">
-      
         <div className="left">
-       
+          <header className="headerIndex">
+            <Logo />
+          </header>
+
           <div className="mainSignup">
             <h1> Join the Puzzle Community </h1>
             <input className="fullNameInput" placeholder="Full name"></input>
@@ -25,11 +20,20 @@ export default function SignUp() {
             <input className="phoneInput" placeholder="Phone"></input>
             <input className="passwordInput" placeholder="Password"></input>
             <Link to="/dashboard">
-            <button className="signUpButtonBlack">Sign Up</button>
+              <button className="signUpButtonBlack">Sign Up</button>
             </Link>
           </div>
+          <p className="Log-In-Here">Already have an account? 
+          <br></br>Log In Here</p>
         </div>
         <div className="rightSignup">
+          <div className="div-second-seach-puzzle-button">
+          <Link to="/index">
+            <button className="second-seach-puzzle-button">
+              Search for puzzles
+            </button>
+          </Link>
+          </div>
           <img
             src={background_pieces}
             className="imagenSignup"
