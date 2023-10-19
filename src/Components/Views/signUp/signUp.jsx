@@ -1,18 +1,22 @@
 import "./signUp.css";
 import { Link } from 'react-router-dom';
 import background_pieces from "../../../assets/background_pieces.png";
-import logo from "../../../assets/logo.png";
+import HeaderLogout from"../../commonComponents/headerLogout/headerLogout.jsx";
+
 
 export default function SignUp() {
 
 
   return (
     <>
+    <header className="headerIndex">
+        < HeaderLogout />
+        
+      </header>
       <div className="topDiv">
+      
         <div className="left">
-          <header className="signUpHeader">
-            <img src={logo} className="imagelogo" alt="The Missing Piece" />
-          </header>
+       
           <div className="mainSignup">
             <h1> Join the Puzzle Community </h1>
             <input className="fullNameInput" placeholder="Full name"></input>
