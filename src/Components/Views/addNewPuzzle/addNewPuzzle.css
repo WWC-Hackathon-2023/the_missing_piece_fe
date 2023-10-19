@@ -79,7 +79,8 @@
 
 /* Estilos para inputs y textareas */
 input,
-textarea {
+textarea,
+select {
     border-radius: 20px;
     font-size: 25px;
     color: #131212;
@@ -96,14 +97,16 @@ textarea {
 
 /* Estilo para el placeholder */
 input::placeholder,
-textarea::placeholder {
+textarea::placeholder,
+select::placeholder {
     font-family: 'League Spartan', sans-serif;
     color: #8f8686;
 }
 
 /* Efecto de foco */
 input:focus,
-textarea:focus {
+textarea:focus,
+select::placeholder {
     box-shadow: 0 0 10px #e7a6ab;
 }
 
