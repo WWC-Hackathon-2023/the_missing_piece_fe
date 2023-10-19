@@ -7,12 +7,11 @@ export default function UpdateProfile() {
 
     return (
         <>
-            <header className="header-home">
-                <SignUpButton />
-                <LogInButton />
-            </header>
-
-            <div className="content-container">
+            <div className="container-new-puzzle">
+                <div className="header-home">
+                    <SignUpButton />
+                    <LogInButton />
+                </div>
                 <div className="left-side">
                     <div className="form-container">
                         <h2>Update Profile Information</h2>
@@ -34,10 +33,11 @@ export default function UpdateProfile() {
                         <button className="return-dashboard-button">Return to dashboard</button>
                     </Link>
                 </div>
+
+                <div>
+                    <h4>© 2023 The Missing Piece Team</h4>
+                </div>
             </div>
-            <footer>
-                <h4>© 2023 The Missing Piece Team</h4>
-            </footer>
         </>
     );
 };
