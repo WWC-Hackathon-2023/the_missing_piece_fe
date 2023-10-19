@@ -18,28 +18,49 @@ body {
   padding: 0px;
 }
 
-.imagelogo {
-  width: 50px;
-  height: 50px;
+.headerIndex {
+  width: 500px;
+  position: relative;
+  z-index: 1;
+  margin-left: 50px;
 }
 
 .left {
   width: 50%;
   position: relative;
-  /* Añade posicionamiento relativo */
   z-index: 1;
+  width: 50%;
+  margin-bottom: 50px;
 }
 
-.left {
-  width: 50%;
+.div-second-seach-puzzle-button {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  margin-right: 30px;
+}
+
+.second-seach-puzzle-button {
+  background-color: white;
+  color: #131212;
+  border: 2px solid #131212;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 25px;
+  width: 270px;
+  margin: 20px;
+
+  position: relative;
+  z-index: 1;
 }
 
 .signUpHeader {
   width: 50%;
   margin: 20px;
   position: relative;
-  /* Añade posicionamiento relativo */
-  z-index: 1;
+  z-index: -1;
 }
 
 .mainSignup {
@@ -55,15 +76,25 @@ body {
 .emailInput,
 .phoneInput,
 .passwordInput {
-  width: 200px;
+  width: 350px;
   border-radius: 20px;
   font-size: 25px;
   color: #131212;
+  background: linear-gradient(to bottom, #f5ecec);
   text-align: center;
   box-shadow: 1px 1px 7px #59343e inset;
-  margin: 10px;
-  width: 300px;
-  height: 50px;
+  margin: 10px 0;
+  padding: 15px;
+  border: none;
+  resize: none;
+  font-family: "League Spartan", sans-serif;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: "League Spartan", sans-serif;
+  color: #8f8686;
 }
 
 .signUpButtonBlack {
@@ -87,7 +118,38 @@ body {
   height: 100%;
 }
 
+.Log-In-Here {
+  font-size: 30px;
+  text-align: center;
+}
+
+/* CSS */
+
+#root {
+  min-height: 100vh;
+  position: relative;
+}
+
+.all {
+  padding-bottom: 100px; /* Añade margen inferior para dejar espacio para el footer */
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #FAE1E3;
+  color: #131212;
+  text-align: center;
+  padding: 10px 0;
+}
+
+
+
+
+
 /* Media query para dispositivos como iPhone XR (aproximadamente) */
+
 @media screen and (max-width: 414px) {
   .topDiv {
     flex-direction: column;
@@ -96,15 +158,20 @@ body {
     margin: 0px;
   }
 
+  .headerIndex {
+     margin-left: 0px;
+  }
+
   h1 {
     margin-left: 20px;
+    text-align: center;
   }
 
   .left,
   .signUpHeader,
   .rightSignup {
     width: 100%;
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
   }
 
@@ -141,6 +208,9 @@ body {
   opacity: 0.4;
 }
 
+.second-seach-puzzle-button {
+  margin-right: 40px;
+}
 
 /* Media query para pantallas más anchas, como la vista horizontal */
 @media screen and (min-width: 415px) {
