@@ -1,3 +1,112 @@
 /* .headerProfile {
     display: flex;
 } */
+.main-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-btn-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-div {
+    display: flex;
+    margin-left: 60%;
+}
+
+.profile-div {
+    display: flex;
+    justify-content: center;
+}
+
+.user-data-div {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-data-text, p {
+    font-size:larger;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    gap: 1rem;
+}
+
+.requests {
+    border-top: 0.5px solid #D95043;
+    padding-top: 10px;
+}
+
+.search-puzzles-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #5BB5D9;
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 280px;
+    height: 50px;
+    margin: 10px;
+    gap: 0.625rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-puzzles-btn:hover {
+    background-color: #F2955E;
+    font-weight: 700;
+}
+
+.profile-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #1C4259;
+    font-size: 25px;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    gap: 0.625rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.profile-btn:hover {
+    background-color: #5BB5D9;
+    color: black;
+    font-weight: 700;
+}
+
+.icons-profile {
+    height: 50px;
+    width: 50px;
+}
+
+.icon-person {
+    height: 130px;
+    width: 130px;
+}
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
