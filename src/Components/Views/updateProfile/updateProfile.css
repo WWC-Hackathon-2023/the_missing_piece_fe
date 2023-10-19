@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=League+Spartan');
+@import '/src/index.css';
 
 * {
     margin: 0;
@@ -7,54 +8,34 @@
 }
 
 /* Estilo para el contenedor principal */
-.container-new-puzzle {
+.update-profile-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    gap: 10px;
+    height: 100vh;
 }
 
+/* Estilos para las columnas izquierda y derecha */
 .left-side,
 .right-side {
     flex: 1;
     width: 200px;
+    padding: 30px;
 }
 
-.left-side {
+.right-side {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
 }
+
 
 /* Versión de escritorio */
 @media (min-width: 768px) {
     .left-side {
         margin-left: 15%;
     }
-}
-
-/* Estilo de la imagen */
-.image {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin-top: 10px;
-    border-radius: 10px;
-}
-
-.image-upload {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    margin: 0 auto;
-}
-
-.icon-close {
-    position: absolute;
-    margin-left: 280px;
-    cursor: pointer;
-    background-color: #D9737B;
-    border-radius: 50%;
-    color: white;
-    padding: 5px;
 }
 
 /* Estilos para inputs y textareas */
@@ -75,6 +56,20 @@ textarea {
     outline: none;
 }
 
+label {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
+}
+
+/* Ajustes para los botones */
+.return-dashboard-button,
+.add-puzzle-button {
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
 /* Estilo para el placeholder */
 input::placeholder,
 textarea::placeholder {
@@ -88,34 +83,14 @@ textarea:focus {
     box-shadow: 0 0 10px #e7a6ab;
 }
 
-.text-area {
-    height: 140px;
-}
-
-.subtitles {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    padding-top: 10px;
-}
-
-/* Ajustes para los botones */
-.return-dashboard-button,
-.add-puzzle-button,
-.yellow-button {
-    border: none;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-}
-
-.title {
+h2 {
     font-size: 35px;
-    padding-bottom: 10px;
+    padding-bottom: 30px;
 }
 
 /* Estilos botones*/
 .return-dashboard-button,
-.add-puzzle-button,
-.yellow-button {
+.add-puzzle-button {
     background-color: white;
     color: #131212;
     border-radius: 20px;
@@ -130,23 +105,14 @@ textarea:focus {
     border: 2px solid #131212;
 }
 
-.yellow-button {
-    background-color: #F2955E;
-    text-align: center;
-    width: 300px;
-    transition: background-color 0.3s ease-in-out;
-}
-
-.yellow-button:hover,
 .add-puzzle-button:hover,
 .return-dashboard-button:hover {
     background-color: #1C4259;
     color: white
 }
 
-
 .add-puzzle-button {
-    background-color: #5BB5D9;
+    background-color: var(--light-blue);
 }
 
 .form-container {
@@ -163,25 +129,52 @@ textarea:focus {
     flex-direction: column;
 }
 
-.foo-ter {
-    color: #8f8686;
-    padding: 30px;
-    margin-top: auto;
-    width: 100%;
-    text-align: center;
+.upload-image label,
+.right-side button {
+    margin-top: 10px;
+    max-width: 300px;
 }
 
-/* Media query para dispositivos pequeños */
+
+
+/* Media querys */
+@media (max-width: 768px) {
+
+    .left-side,
+    .right-side {
+        flex: 1 0 100%;
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .left-side,
+    .right-side {
+        align-items: stretch;
+    }
+}
+
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
-        /* Cambio a fila para dispositivos pequeños */
     }
 
     .left-side,
     .right-side {
-        width: 100%;
-        /* Ocupan toda la anchura en dispositivos pequeños */
+        flex: 1 0 100%;
+        min-width: 100%;
+    }
+
+    .left-side,
+    .right-side {
+        align-items: stretch;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
     }
 }
 

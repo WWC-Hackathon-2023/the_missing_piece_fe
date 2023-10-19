@@ -25,7 +25,8 @@ body {
 
 .left {
   width: 50%;
-  position: relative; /* Añade posicionamiento relativo */
+  position: relative;
+  /* Añade posicionamiento relativo */
   z-index: 1;
 }
 
@@ -36,7 +37,8 @@ body {
 .signUpHeader {
   width: 50%;
   margin: 20px;
-  position: relative; /* Añade posicionamiento relativo */
+  position: relative;
+  /* Añade posicionamiento relativo */
   z-index: 1;
 }
 
@@ -132,9 +134,9 @@ body {
 .imagenSignup {
   width: 100%;
   height: 100%;
-  position: absolute; 
-  top: 0; 
-  left: 0; 
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: 0;
   opacity: 0.4;
 }
@@ -143,16 +145,18 @@ body {
 /* Media query para pantallas más anchas, como la vista horizontal */
 @media screen and (min-width: 415px) {
   .topDiv {
-    flex-direction: row; 
+    flex-direction: row;
   }
 
-  .left, .rightSignup {
+  .left,
+  .rightSignup {
     width: 50%;
   }
 
   h1 {
     margin: 5px 0px 10px 20px;
   }
+
   .left {
     position: relative;
     z-index: 1;
@@ -166,7 +170,7 @@ body {
   .imagenSignup {
     position: absolute;
     top: 0;
-    right: 0; 
+    right: 0;
     z-index: 0;
     width: 100%;
     height: 100%;
