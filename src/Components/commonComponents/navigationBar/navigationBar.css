@@ -7,9 +7,21 @@
   cursor: pointer;
 }
 
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
 .nav-list ul {
   list-style-type: none;
   display: flex;
+  flex-wrap: wrap;
   font-weight: bolder;
+  align-content: center;
+}
+
+.nav-list li {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
