@@ -1,4 +1,5 @@
 import "./dashboard.css";
+import zipIcon from "../../../assets/zip_icon.png";
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function Dashboard() {
@@ -15,29 +16,29 @@ export default function Dashboard() {
         <NavigationBar />
       </header>
       <main>
-        <h1>"Hello Profile"</h1>
         <section className="profile-section">
-        <div className="user-profile">
-      <h2>Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
-      <div className="user-info">
-        <div>
-          {/* <strong>Zip Code:</strong> {user.zipCode} */}
-        </div>
-        <div>
-          {/* <strong>Email:</strong> {user.email} */}
-        </div>
-        <div>
-          {/* <strong>Phone:</strong> {user.phone} */}
-        </div>
-      </div>
-      <div className="profile-actions">
-        <button className="add-puzzle-btn" /*onClick={onEditProfileClick}*/>Add New Puzzle</button>
-        <button className="update-profile-btn" /*onClick={onAddPuzzleClick}*/>Update Profile</button>
-      </div>
-    </div>
+          <h2>Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
+          <div className="user-info">
+            <div>
+              <img className="icons" src={zipIcon} alt="Zip Icon" />
+              <strong>Zip Code:</strong>  {/* {user.zipCode} */}
+            </div>
+            <div>
+              <img className="icons" src="" alt="Email Icon" />
+              <strong>Email:</strong> {/* {user.email} */}
+            </div>
+            <div>
+              <img className="icons" src="" alt="Phone Icon" />
+              <strong>Phone:</strong> {/* {user.phone} */}
+            </div>
+          </div>
+          <div className="profile-actions">
+            <button className="add-puzzle-btn profile-btn" /*onClick={onEditProfileClick}*/>Add Puzzle</button>
+            <button className="update-profile-btn profile-btn" /*onClick={onAddPuzzleClick}*/>Update Profile</button>
+          </div>
         </section>
-        <section className="requests-for-user"></section>
-        <section className="user-requests"></section>
+        <section className="requests-for-user requests"></section>
+        <section className="user-requests requests"></section>
       </main>
       <footer>
         <h4>© 2023 The Missing Piece Team</h4>
