@@ -1,0 +1,40 @@
+@import '/src/index.css';
+
+/* Estilos para la lista desplegable */
+select {
+    border-radius: 20px;
+    font-size: 25px;
+    color: #131212;
+    background: linear-gradient(to bottom, #f5ecec);
+    text-align: center;
+    box-shadow: 1px 1px 7px #59343E;
+    margin: 10px 0;
+    padding: 15px;
+    border: none;
+    resize: none;
+    font-family: 'League Spartan', sans-serif;
+    outline: none;
+}
+
+select option:hover {
+    background-color: #e7a6ab;
+    color: white;
+}
+
+.delete-message,
+.warning-text {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.delete-message {
+    color: var(--salmon);
+}
+
+.warning-text {
+    color: black;
+}
+
+.warning-zone {
+    padding-left: 15px;
+}

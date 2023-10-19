@@ -9,6 +9,7 @@ import Dashboard from "./Components/Views/dashboard/dashboard.jsx"
 import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx';
 import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
 import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
+import EditPuzzle from './Components/Views/editPuzzle/editPuzzle.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/updateProfile",
     element: <UpdateProfile />,
+  },
+  {
+    path: "/editPuzzle",
+    element: <EditPuzzle />,
   },
 
 ]);
