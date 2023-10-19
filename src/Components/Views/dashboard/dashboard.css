@@ -1,8 +1,23 @@
 /* .headerProfile {
     display: flex;
 } */
+.main-profile {
+    display: flex;
+    flex-direction: column;
+}
 
-.profile-section {
+.profile-btn-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn-div {
+    display: flex;
+    margin-left: 60%;
+}
+
+.profile-div {
     display: flex;
     justify-content: center;
 }
@@ -30,6 +45,30 @@
     padding-top: 10px;
 }
 
+.search-puzzles-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: #5BB5D9;
+    color: black;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 280px;
+    height: 50px;
+    margin: 10px;
+    gap: 0.625rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search-puzzles-btn:hover {
+    background-color: #F2955E;
+    font-weight: 700;
+}
+
 .profile-btn {
     display: flex;
     justify-content: center;
@@ -37,6 +76,7 @@
     color: white;
     background: #1C4259;
     font-size: 25px;
+    font-weight: 700;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
@@ -51,7 +91,7 @@
 .profile-btn:hover {
     background-color: #5BB5D9;
     color: black;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .icons-profile {
