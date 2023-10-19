@@ -1,7 +1,7 @@
 import "./index.css";
 import LogInButton from "../../commonComponents/logInButton/logInButton.jsx";
 import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
-import logo from "../../../assets/logo.png";
+import Logo from "../../commonComponents/logo/logo.jsx";
 import puzzle_1 from "../../../assets/puzzle_1.jpg";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
@@ -11,7 +11,7 @@ export default function Index() {
     <>
       <header className="headerIndex">
         <div className="containerImageLogo">
-          <img src={logo} className="imagelogo" alt="The Missing Piece" />
+        <Logo />
         </div>
         <div className="containerButtons">
           <SignUpButton />
