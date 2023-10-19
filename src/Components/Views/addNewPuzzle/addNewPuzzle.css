@@ -6,36 +6,57 @@
     box-sizing: border-box;
 }
 
-/* Estilo para el contenedor principal */
-.content-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    min-height: 100vh;
+/* Estilo base para el contenedor con Grid */
+.container-new-puzzle {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
-/* Estilos para las columnas izquierda y derecha */
 .left-side,
 .right-side {
-    flex: 1;
-    width: 200px;
-    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 100%;
+}
+
+.left-side {
+    align-items: center;
+    justify-content: center;
+}
+
+.right-side {
+    align-items: left;
 }
 
 /* Versión de escritorio */
 @media (min-width: 768px) {
     .left-side {
-        margin-left: 15%;
+        padding-left: 30%;
+    }
+
+    .rigth-side {
+        padding-right: 60%;
     }
 }
 
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .left-side {
+        align-items: center;
+    }
+}
+
+
 /* Estilo de la imagen */
-img {
+.image {
     position: relative;
     width: 300px;
     height: 300px;
-    margin-top: 30px;
+    margin-top: 10px;
     border-radius: 10px;
 }
 
@@ -59,7 +80,6 @@ img {
 /* Estilos para inputs y textareas */
 input,
 textarea {
-    width: 70%;
     border-radius: 20px;
     font-size: 25px;
     color: #131212;
@@ -72,21 +92,6 @@ textarea {
     resize: none;
     font-family: 'League Spartan', sans-serif;
     outline: none;
-}
-
-label {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: left;
-    padding-top: 10px;
-}
-
-/* Ajustes para los botones */
-.return-dashboard-button,
-.add-puzzle-button,
-.yellow-button {
-    border: none;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilo para el placeholder */
@@ -102,13 +107,33 @@ textarea:focus {
     box-shadow: 0 0 10px #e7a6ab;
 }
 
-h2 {
-    font-size: 35px;
-    padding-bottom: 10px;
+.input {
+    width: 90%;
 }
 
-textarea {
+.text-area {
     height: 140px;
+    width: 90%;
+}
+
+.subtitles {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding-top: 10px;
+}
+
+/* Ajustes para los botones */
+.return-dashboard-button,
+.add-puzzle-button,
+.yellow-button {
+    border: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 35px;
+    padding-bottom: 10px;
 }
 
 /* Estilos botones*/
@@ -162,55 +187,24 @@ textarea {
     flex-direction: column;
 }
 
-.upload-image label,
-.right-side button {
-    margin-top: 10px;
-    max-width: 300px;
-}
-
-footer {
+.foo-ter {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
     color: #8f8686;
-    padding: 50px;
+    padding: 30px;
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Media querys */
+/* Media Query para dispositivos pequeños */
 @media (max-width: 768px) {
-
-    .left-side,
-    .right-side {
-        flex: 1 0 100%;
-        min-width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .left-side,
-    .right-side {
-        align-items: stretch;
-    }
-}
-
-@media (max-width: 768px) {
-    .content-container {
-        flex-direction: column;
-    }
-
-    .left-side,
-    .right-side {
-        flex: 1 0 100%;
-        min-width: 100%;
-    }
-
-    .left-side,
-    .right-side {
-        align-items: stretch;
-    }
-}
-
-@media (max-width: 768px) {
-    .content-container {
-        flex-direction: column;
+    .container-new-puzzle {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
     }
 }
 
