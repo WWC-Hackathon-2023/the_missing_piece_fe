@@ -2,7 +2,8 @@
 
 @import url('https://fonts.googleapis.com/css?family=League+Spartan');
 
-html, body {
+html,
+body {
     font-family: "League+Spartan";
     height: 100%;
     margin: 0;
@@ -89,19 +90,19 @@ h4 {
         width: 100%;
         margin-left: 0px;
         padding: 0%;
-        text-align:left;
-        
+        text-align: left;
+
     }
 
-    .logo{
+    .logo {
         margin-left: 5%;
     }
 
     .welcomeMessage {
         width: 100%;
-        margin:2px;
+        margin: 2px;
         align-items: center;
-        
+
     }
 
     h1 {
@@ -115,6 +116,5 @@ h4 {
     .seeallPuzzlesButton {
         font-size: 24px;
         width: 100%;
-       
     }
 }
