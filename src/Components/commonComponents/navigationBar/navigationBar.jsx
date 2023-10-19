@@ -1,6 +1,7 @@
 import React from 'react';
 import './navigationBar.css';
 import LogoutButton from "../../commonComponents/logoutButton/logoutButton.jsx";
+import Logo from "../../commonComponents/logo/logo.jsx";
 import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
@@ -8,9 +9,9 @@ export default function NavigationBar() {
   return (
     <>
       <nav className='nav-list'>
+        <Logo />
         <ul>
           <li>
-            {/* Usa el componente Link de react-router para enlazar a las rutas */}
             <Link to="/dashboard" className="nav-bar-button">
               Dashboard
             </Link>

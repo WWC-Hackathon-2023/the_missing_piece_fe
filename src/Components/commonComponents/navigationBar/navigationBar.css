@@ -10,4 +10,6 @@
 .nav-list ul {
   list-style-type: none;
   display: flex;
+  font-weight: bolder;
+  display: flex;
 }
