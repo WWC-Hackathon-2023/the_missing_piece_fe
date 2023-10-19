@@ -1,15 +1,10 @@
 import "./dashboard.css";
-import logo from "../../../assets/logo.png";
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function Dashboard() {
   return (
     <>
-    
       <header className="headerProfile">
-        <div className="containerImageLogo">
-          <img src={logo} className="imagelogo" alt="The Missing Piece" />
-        </div>
         <div className="containerButtons">
           <NavigationBar />
         </div>
