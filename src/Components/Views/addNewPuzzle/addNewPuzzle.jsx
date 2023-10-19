@@ -38,12 +38,12 @@ export default function AddNewPuzzle() {
                         <div className="form-container">
                             <h2 className='title'>Add a new puzzle</h2>
                             <label className='subtitles'>Title</label>
-                            <input placeholder='Add a title for your puzzle' />
+                            <input className='input' placeholder='Add a title for your puzzle' />
                             <label className='subtitles'>Description</label>
                             <textarea className='text-area' placeholder='Add a description' />
                             <label className='subtitles'>Pieces Total Count</label>
-                            <input placeholder='Total pieces' />
-                            <label className='notes'>Notes</label>
+                            <input className='input' placeholder='Total pieces' />
+                            <label className='subtitles'>Notes</label>
                             <textarea className='text-area' placeholder='Add any notes you want, for example, if the puzzle is in good condition or not, etc.' />
                         </div>
                     </div>
@@ -68,10 +68,9 @@ export default function AddNewPuzzle() {
                             <button className="return-dashboard-button">Return to dashboard</button>
                         </Link>
                     </div>
-
-                    <div className='foo-ter'>
-                        <h4>© 2023 The Missing Piece Team</h4>
-                    </div>
+                </div>
+                <div className='foo-ter'>
+                    <h4>© 2023 The Missing Piece Team</h4>
                 </div>
             </div>
         </>

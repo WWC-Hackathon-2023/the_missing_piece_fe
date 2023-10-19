@@ -6,30 +6,50 @@
     box-sizing: border-box;
 }
 
-/* Estilo para el contenedor principal */
+/* Estilo base para el contenedor con Grid */
 .container-new-puzzle {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .left-side,
 .right-side {
-    flex: 1;
-    width: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    justify-content: center;
+    height: 100%;
 }
 
 .left-side {
+    align-items: center;
     justify-content: center;
+}
+
+.right-side {
+    align-items: left;
 }
 
 /* Versión de escritorio */
 @media (min-width: 768px) {
     .left-side {
-        margin-left: 15%;
+        padding-left: 30%;
+    }
+
+    .rigth-side {
+        padding-right: 60%;
     }
 }
+
+/* Media Query para dispositivos pequeños */
+@media (max-width: 768px) {
+    .left-side {
+        align-items: center;
+    }
+}
+
 
 /* Estilo de la imagen */
 .image {
@@ -60,7 +80,6 @@
 /* Estilos para inputs y textareas */
 input,
 textarea {
-    width: 70%;
     border-radius: 20px;
     font-size: 25px;
     color: #131212;
@@ -88,8 +107,13 @@ textarea:focus {
     box-shadow: 0 0 10px #e7a6ab;
 }
 
+.input {
+    width: 90%;
+}
+
 .text-area {
     height: 140px;
+    width: 90%;
 }
 
 .subtitles {
@@ -164,24 +188,23 @@ textarea:focus {
 }
 
 .foo-ter {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
     color: #8f8686;
     padding: 30px;
     margin-top: auto;
     width: 100%;
     text-align: center;
+    justify-content: center;
+    width: 100%;
 }
 
-/* Media query para dispositivos pequeños */
+/* Media Query para dispositivos pequeños */
 @media (max-width: 768px) {
-    .content-container {
-        flex-direction: column;
-        /* Cambio a fila para dispositivos pequeños */
-    }
-
-    .left-side,
-    .right-side {
-        width: 100%;
-        /* Ocupan toda la anchura en dispositivos pequeños */
+    .container-new-puzzle {
+        grid-template-columns: 1fr;
+        /* Una sola columna */
     }
 }
 
