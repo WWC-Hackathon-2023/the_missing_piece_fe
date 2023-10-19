@@ -7,6 +7,7 @@ import SignUp from "./Components/Views/signUp/signUp.jsx";
 import Login from "./Components/Views/login/login.jsx";
 import Dashboard from "./Components/Views/dashboard/dashboard.jsx"
 import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx';
+import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
     path: "/puzzleShowPage",
     element: <PuzzleShowPage />,
   },
-  
+  {
+    path: "/addNewPuzzle",
+    element: <AddNewPuzzle />,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
