@@ -1,0 +1,27 @@
+.nav-bar-button {
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  padding: 8px 16px; /* Ajusta el relleno según tus preferencias */
+  border: none; /* Elimina el borde */
+  background-color: transparent; /* Establece el fondo transparente */
+  color: #333; /* Color del texto para botones sin fondo */
+  cursor: pointer;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bolder;
+  align-content: center;
+}
+
+.nav-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}

@@ -7,6 +7,8 @@ import SignUp from "./Components/Views/signUp/signUp.jsx";
 import Login from "./Components/Views/login/login.jsx";
 import Dashboard from "./Components/Views/dashboard/dashboard.jsx"
 import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx';
+import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
+import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,11 +31,27 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
+  // {
+  //   path: "/myCollection",
+  //   element: <MyCollection />,
+  // },
+  // {
+  //   path: "/searchPuzzles",
+  //   element: <SearchPuzzles />,
+  // },
   {
     path: "/puzzleShowPage",
     element: <PuzzleShowPage />,
   },
-  
+  {
+    path: "/addNewPuzzle",
+    element: <AddNewPuzzle />,
+  },
+  {
+    path: "/updateProfile",
+    element: <UpdateProfile />,
+  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

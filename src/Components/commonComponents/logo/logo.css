@@ -9,12 +9,10 @@
 .image-logo {
     width: 70px;
     height:70px;
+  cursor: pointer;
 }
 
-/* .mainLogo {
-  width: 10%;
-  height: 10%;
-  margin: 20px;
-  position: relative; 
-  z-index: 1;
-} */
+
+
+
+
