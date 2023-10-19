@@ -2,10 +2,12 @@
     background-color:white;
     color: #131212;
     border: 2px solid #131212;
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 25px;
-    width: 200px;
+    font-weight: 700;
+    width: 150px;
+    height: 60px;
     margin: 20px;
 }
