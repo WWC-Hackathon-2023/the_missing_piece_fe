@@ -1,5 +1,16 @@
-.headerLogout {
+.header-logout {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
+
+
+.header-buttons-logout {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 140px;
+}
+
