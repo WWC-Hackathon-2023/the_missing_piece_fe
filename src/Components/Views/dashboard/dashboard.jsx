@@ -55,8 +55,16 @@ export default function Dashboard() {
             <button className="search-puzzles-btn">Search for Puzzles</button>
           </div>
         </section>
-        <section className="requests-for-user requests"></section>
-        <section className="user-requests requests"></section>
+        <section className="requests-for-user requests">
+          <div className="title-section">Request to Borrow My Puzzles</div>
+          <div className="puzzle-request-div"></div>
+          <div className="btn-request-div"></div>
+        </section>
+        <section className="user-requests requests">
+          <div className="title-section">Puzzles I have requested</div>
+          <div className="puzzle-request-div"></div>
+          <div className="btn-request-div"></div>
+        </section>
       </main>
       <footer>
         <h4>© 2023 The Missing Piece Team</h4>
