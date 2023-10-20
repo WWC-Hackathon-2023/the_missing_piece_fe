@@ -1,4 +1,5 @@
 import "./dashboard.css";
+import { Link } from "react-router-dom";
 import zipIcon from "../../../assets/zip_icon.png";
 import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";
@@ -23,8 +24,12 @@ export default function Dashboard() {
           <div className="profile-div">
             <div className="profile-actions">
               <img className="icon-person" src={iconPerson} alt="Profile Icon" />
-              <button className="add-puzzle-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Add Puzzle</button>
-              <button className="update-profile-btn profile-positive-btn btn" /*onClick={onAddPuzzleClick}*/>Update Profile</button>
+              <button className="profile-positive-btn btn">
+                <Link to="/addNewPuzzle" className="add-puzzle-btn">
+                  Add Puzzle
+                </Link>
+              </button>
+              <button className="update-profile-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Update Profile</button>
             </div>
             <div className="user-info">
               <h2>Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
