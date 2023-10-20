@@ -36,10 +36,10 @@ const router = createBrowserRouter([
   //   path: "/myCollection",
   //   element: <MyCollection />,
   // },
-  // {
-  //   path: "/searchPuzzles",
-  //   element: <SearchPuzzles />,
-  // },
+  {
+    path: "/index",
+    element: <Index />,
+  },
   {
     path: "/puzzleShowPage",
     element: <PuzzleShowPage />,

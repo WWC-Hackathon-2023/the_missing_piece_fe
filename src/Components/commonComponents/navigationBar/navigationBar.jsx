@@ -22,7 +22,7 @@ export default function NavigationBar() {
             </Link>
           </li>
           <li>
-            <Link to="/searchPuzzles" className="nav-bar-button">
+            <Link to="/index" className="nav-bar-button">
               Search for Puzzles
             </Link>
           </li>
