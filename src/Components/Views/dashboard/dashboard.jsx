@@ -23,8 +23,8 @@ export default function Dashboard() {
           <div className="profile-div">
             <div className="profile-actions">
               <img className="icon-person" src={iconPerson} alt="Profile Icon" />
-              <button className="add-puzzle-btn profile-btn" /*onClick={onEditProfileClick}*/>Add Puzzle</button>
-              <button className="update-profile-btn profile-btn" /*onClick={onAddPuzzleClick}*/>Update Profile</button>
+              <button className="add-puzzle-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Add Puzzle</button>
+              <button className="update-profile-btn profile-positive-btn btn" /*onClick={onAddPuzzleClick}*/>Update Profile</button>
             </div>
             <div className="user-info">
               <h2>Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
@@ -52,18 +52,28 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="btn-div">
-            <button className="search-puzzles-btn">Search for Puzzles</button>
+            <button className="search-puzzles-btn btn">Search for Puzzles</button>
           </div>
         </section>
         <section className="requests-for-user requests">
+          {/* Aquí habrá que ver si estos divs se tienen que cambiar, porque lo que muestran dependerá del status del puzzle */}
           <div className="title-section">Request to Borrow My Puzzles</div>
-          <div className="puzzle-request-div"></div>
-          <div className="btn-request-div"></div>
+          <div className="puzzle-request-div">
+            <img src="" alt="puzzle" />
+          </div>
+          <div className="btn-request-div">
+            <button className="profile-positive-btn accept-btn btn">Accept</button>
+            <button className="close-request-btn btn">Deny</button>
+          </div>
         </section>
         <section className="user-requests requests">
           <div className="title-section">Puzzles I have requested</div>
           <div className="puzzle-request-div"></div>
-          <div className="btn-request-div"></div>
+          <div className="btn-request-div">
+            <button className="profile-positive-btn owner-info-btn btn">Owner Info</button>
+            <button className="withdraw-request-btn btn">Withdraw Request</button>
+            <button className="returned-puzzle-btn close-request-btn btn">Returned</button>
+          </div>
         </section>
       </main>
       <footer>

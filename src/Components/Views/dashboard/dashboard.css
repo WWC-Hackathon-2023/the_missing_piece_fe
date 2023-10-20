@@ -1,10 +1,11 @@
 /* .headerProfile {
     display: flex;
 } */
-/* -------------------- PROFILE SECTION STYLE ----------------- */
+/* -------------------- PROFILE SECTION STYLES ----------------- */
 .main-profile {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 .profile-btn-section {
@@ -42,58 +43,66 @@
 }
 
 /* ---------------------------BUTTON STYLES ------------------------------*/
-.search-puzzles-btn {
+/* Estilos comunes para botones */
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    background-color: #5BB5D9;
-    color: black;
     font-weight: 700;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    width: 280px;
-    height: 50px;
+    width: 200px; /* Ancho común para botones */
+    height: 50px; /* Altura común para botones */
     margin: 10px;
     gap: 0.625rem;
     transition: background-color 0.3s ease-in-out;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos para botones específicos */
+.search-puzzles-btn {
+    background-color: #5BB5D9;
+    width: 280px;
 }
 
 .search-puzzles-btn:hover {
     background-color: #F2955E;
-    font-weight: 700;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: black;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
-.profile-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
+.profile-positive-btn {
     background: #1C4259;
-    font-size: 25px;
-    font-weight: 700;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    width: 200px;
-    height: 50px;
-    margin: 10px;
-    gap: 0.625rem;
-    transition: background-color 0.3s ease-in-out;
+    color: white;
 }
 
-.profile-btn:hover {
+.profile-positive-btn:hover {
     background-color: #5BB5D9;
     color: black;
-    font-weight: 700;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.close-request-btn {
+    background: #F2955E;
+    color: black;
+}
+
+.close-request-btn:hover {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.withdraw-request-btn {
+    width: 280px;
+    background: #F2955E;
+    color: black;
+}
+
+.withdraw-request-btn:hover {
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+/* ------------------- ICONS STYLES -------------------------------------*/
 .icons-profile {
     height: 50px;
     width: 50px;
@@ -111,8 +120,32 @@
     align-items: center;
 }
 
+.close-request-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    background: #F2955E;
+    font-size: 25px;
+    font-weight: 700;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    gap: 0.625rem;
+    transition: background-color 0.3s ease-in-out;
+}
+
 /* ---------------------- REQUEST SECTION STYLES -------------------------*/
 .requests {
     border-top: 0.5px solid #D95043;
     padding-top: 10px;
+}
+
+.title-section {
+    font-weight: 800;
+    font-size: 40px;
 }
