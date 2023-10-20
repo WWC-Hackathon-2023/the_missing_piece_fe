@@ -1,6 +1,7 @@
 /* .headerProfile {
     display: flex;
 } */
+/* -------------------- PROFILE SECTION STYLE ----------------- */
 .main-profile {
     display: flex;
     flex-direction: column;
@@ -40,11 +41,7 @@
     gap: 1rem;
 }
 
-.requests {
-    border-top: 0.5px solid #D95043;
-    padding-top: 10px;
-}
-
+/* ---------------------------BUTTON STYLES ------------------------------*/
 .search-puzzles-btn {
     display: flex;
     justify-content: center;
@@ -62,11 +59,13 @@
     margin: 10px;
     gap: 0.625rem;
     transition: background-color 0.3s ease-in-out;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .search-puzzles-btn:hover {
     background-color: #F2955E;
     font-weight: 700;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile-btn {
@@ -92,6 +91,7 @@
     background-color: #5BB5D9;
     color: black;
     font-weight: 700;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 .icons-profile {
@@ -109,4 +109,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* ---------------------- REQUEST SECTION STYLES -------------------------*/
+.requests {
+    border-top: 0.5px solid #D95043;
+    padding-top: 10px;
 }
