@@ -18,7 +18,7 @@ export default function NavigationBar() {
           </li>
           <li>
             <Link to="/myCollection" className="nav-bar-button">
-              My Puzzles
+              My Collection
             </Link>
           </li>
           <li>

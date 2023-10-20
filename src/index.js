@@ -10,6 +10,7 @@ import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx
 import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
 import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
 import EditPuzzle from './Components/Views/editPuzzle/editPuzzle.jsx';
+import MyCollection from './Components/Views/myCollection/myCollection.jsx';
 
 const router = createBrowserRouter([
   {
@@ -32,10 +33,10 @@ const router = createBrowserRouter([
     path: "/dashboard",
     element: <Dashboard />,
   },
-  // {
-  //   path: "/myCollection",
-  //   element: <MyCollection />,
-  // },
+  {
+    path: "/myCollection",
+    element: <MyCollection />,
+  },
   {
     path: "/index",
     element: <Index />,
