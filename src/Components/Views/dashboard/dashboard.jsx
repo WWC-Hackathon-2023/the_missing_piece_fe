@@ -30,7 +30,11 @@ export default function Dashboard() {
                   Add Puzzle
                 </Link>
               </button>
-              <button className="update-profile-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Update Profile</button>
+              <button className="profile-positive-btn btn">
+                <Link to="/updateProfile" className="update-profile-btn">
+                  Update Profile
+                </Link>
+              </button>
             </div>
             <div className="user-info">
               <h2 className="user-name-profile">Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
@@ -59,9 +63,9 @@ export default function Dashboard() {
           </div>
           <div className="btn-div">
             <button className="search-puzzles-btn btn">
-            <Link to="/index" className="search-puzzles">
-              Search for Puzzles
-            </Link>
+              <Link to="/index" className="search-puzzles">
+                Search for Puzzles
+              </Link>
             </button>
           </div>
         </section>

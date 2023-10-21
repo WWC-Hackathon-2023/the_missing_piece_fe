@@ -110,7 +110,8 @@
 }
 
 .add-puzzle-btn,
-.search-puzzles {
+.search-puzzles,
+.update-profile-btn {
     text-decoration: none; /* Elimina el subrayado */
     color: inherit;
 }
