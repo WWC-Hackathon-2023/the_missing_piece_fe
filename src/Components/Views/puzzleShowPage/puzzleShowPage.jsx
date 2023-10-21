@@ -5,6 +5,7 @@ import zipIcon from "../../../assets/zip_icon.png";
 import piece_icon from "../../../assets/piece_icon.png";
 
 export default function PuzzleShowPage() {
+
   return (
     <>
       <div className='app-container'>
