@@ -1,5 +1,6 @@
 import "./dashboard.css";
 import { Link } from "react-router-dom";
+import puzzle_10 from "../../../assets/puzzle_10.jpg";
 import zipIcon from "../../../assets/zip_icon.png";
 import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";
@@ -32,7 +33,7 @@ export default function Dashboard() {
               <button className="update-profile-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Update Profile</button>
             </div>
             <div className="user-info">
-              <h2>Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
+              <h2 className="user-name-profile">Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
               <div className="user-data-div">
                 <img className="icons-profile" src={zipIcon} alt="Zip Icon" />
                 <div className="user-data-text">
@@ -63,27 +64,37 @@ export default function Dashboard() {
         <section className="requests-for-user requests">
           {/* Aquí habrá que ver si estos divs se tienen que cambiar, porque lo que muestran dependerá del status del puzzle */}
           <div className="title-section">Request to Borrow My Puzzles</div>
-          <div className="puzzle-request-div">
-            <img src="" alt="puzzle" />
-          </div>
-          <div className="btn-request-div">
-            <button className="profile-positive-btn accept-btn btn">Accept</button>
-            <button className="close-request-btn btn">Deny</button>
+          <div className="puzzle-info-container">
+            <figure className="puzzle-img-div">
+              <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
+            </figure>
+            <div className="btn-request-div">
+              <button className="profile-positive-btn accept-btn btn">Accept</button>
+              <button className="close-request-btn btn">Deny</button>
+            </div>
           </div>
         </section>
         <section className="user-requests requests">
           <div className="title-section">Puzzles I have requested</div>
-          <div className="puzzle-request-div"></div>
-          <div className="btn-request-div">
-            <button className="profile-positive-btn owner-info-btn btn">Owner Info</button>
-            <button className="withdraw-request-btn btn">Withdraw Request</button>
-            <button className="returned-puzzle-btn close-request-btn btn">Returned</button>
+          <div className="puzzle-info-container">
+            <figure className="puzzle-img-div">
+              <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
+            </figure>
+            <div className="info-request-puzzle">
+              <h3> {/* Título del puzzle*/} </h3>
+              <p> {/* Fecha de solicitud del puzzle */} </p>
+            </div>
+            <div className="btn-request-div">
+              <button className="profile-positive-btn owner-info-btn btn">Owner Info</button>
+              {/* <button className="withdraw-request-btn btn">Withdraw Request</button>
+              <button className="returned-puzzle-btn close-request-btn btn">Returned</button> */}
+            </div>
           </div>
         </section>
       </main>
-      <footer>
+      <div className="foo-ter">
         <h4>© 2023 The Missing Piece Team</h4>
-      </footer>
+      </div>
     </>
   );
 }
