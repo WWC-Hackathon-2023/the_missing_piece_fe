@@ -1,140 +1,53 @@
-@import url('https://fonts.googleapis.com/css?family=League+Spartan');
-
-html,
-body {
-    font-family: "League+Spartan";
-    height: 100%;
-    margin: 0;
-    padding: 0;
+.backgroung-login {
+    background-image: url('../../../assets/background_social.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 50% 100%;
+    height: 100vh;
 }
 
-html {
-    background: linear-gradient(to top, #FAE1E3 20%, #FFFFFF 30%);
+.main-login {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    padding: 80px 50px 0px 50px;
 }
 
-body {
-    height: 100%;
-    margin: 20px;
-}
+/* Media Queries */
 
-.header-login {
-    text-align: right;
-    padding: 20px 130px 20px 20px;
-
-}
-
-.mainHome {
-    display: flex;
-    margin: 20px;
-}
-
-
-
-.welcomeMessage {
-    width: 50%;
-    margin-left: 70px;
-}
-
-h1 {
-    font-size: 70px;
-    font-weight: bold;
-}
-
-.logo {
-    margin-left: 40px;
-    width: 87%;
-    height: 87%;
-}
-
-p {
-    font-size: 36px;
-}
-
-.ContainerLogo {
-    align-content: center;
-    width: 50%;
-}
-
-.rightLogin {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-
-}
-
-.imagenlogin {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    z-index: 0;
-}
-
-.seeallPuzzlesButton {
-    background-color: #131212;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 32px;
-    font-weight: bold;
-    width: 340px;
-    position: relative;
-    z-index: 1;
-}
-
-h4 {
-    text-align: center;
-}
-
-/* Media query para dispositivos Samsung iPhone XR (aproximadamente) */
-
-@media screen and (max-width: 414px) {
-    body {
-        margin: 10px;
+@media (max-width: 768px) {
+    .backgroung-login {
+        background-image: none;
+        padding: 20px;
     }
 
-    .headerHome {
-        text-align: right;
-        margin: 10px 10px 10px 20px;
+    .main-login {
+        grid-template-columns: 1fr;
+        padding: 20px;
     }
 
-    .mainHome {
+    .header-signup {
         flex-direction: column;
-    }
-
-    .ContainerLogo {
-        width: 100%;
-        margin-left: 0px;
-        padding: 0%;
-        text-align: left;
-
-    }
-
-    .logo {
-        margin-left: 5%;
-    }
-
-    .welcomeMessage {
-        width: 100%;
-        margin: 2px;
         align-items: center;
-
+        gap: 10px;
     }
 
-    h1 {
-        font-size: 40px;
-    }
-
-    p {
-        font-size: 24px;
-    }
-
-    .seeallPuzzlesButton {
-        font-size: 24px;
+    .second-seach-puzzle-button {
         width: 100%;
+        margin-top: 10px;
+    }
+
+    .left-side-signup {
+        padding: 20px;
+    }
+
+    .emailInput,
+    .passwordInput {
+        width: 100%;
+    }
+
+    .signUpButtonBlack {
+        width: 180px;
+        margin-top: 10px;
     }
 }

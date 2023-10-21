@@ -1,116 +1,142 @@
 /* Estilos para pantallas normales de PC */
 
 @import url('https://fonts.googleapis.com/css?family=League+Spartan');
+@import '/src/index.css';
 
-html,
-body {
-    font-family: "League+Spartan";
-    height: 100%;
+* {
     margin: 0;
-    padding: 0;
+    font-family: "League Spartan", sans-serif;
+    box-sizing: border-box;
 }
 
-body {
-    height: 100%;
+#root {
+    background: linear-gradient(to top, #fae1e3 20%, #ffffff 30%);
+    min-height: 100vh;
 }
 
+.title-home {
+    font-size: 50px;
+    line-height: 1;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+    font-weight: bolder;
+}
+
+.p-home {
+    font-size: 20px;
+    line-height: 1;
+    color: var(--text);
+    padding-bottom: 20px;
+}
+
+/* Container for buttons signUp and SignIn */
 .header-Home {
-    text-align: right;
-    padding: 20px 130px 20px 20px;
-}
-
-.mainHome {
     display: flex;
-    margin: 20px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding: 35px 100px 10px 10px;
+    flex-wrap: wrap;
 }
 
-.welcomeMessage {
-    width: 50%;
-    margin-left: 70px;
+.main-home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 100px;
 }
 
-h1 {
-    font-size: 70px;
-    font-weight: bold;
+.left-side-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
 }
 
-.logo {
-    margin-left: 40px;
-    width: 87%;
-    height: 87%;
+.right-side-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-p {
-    font-size: 36px;
-    margin-left: 15px;
-    margin-top: 50px;
-}
-
-.ContainerLogo {
-    align-content: center;
-    width: 50%;
-}
-
-.seeallPuzzlesButton {
+.see-all-button {
     background-color: #131212;
     color: white;
     border: none;
     border-radius: 20px;
-    padding: 10px 20px;
     cursor: pointer;
-    font-size: 32px;
+    font-size: 20px;
+    width: 190px;
+    height: 45px;
     font-weight: bold;
-    width: 340px;
-    margin-top: 50px;
-    margin-left: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
-h4 {
-    text-align: center;
+.see-all-button:hover {
+    background-color: var(--salmon);
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+    color: black
 }
 
-/* Media query para dispositivos Samsung iPhone XR (aproximadamente) */
-@media screen and (max-width: 414px) {
+/* Effect when the button is clicked */
+.see-all-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.logo-home {
+    width: 80%;
+}
+
+.foo-ter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+}
+
+/* Media Queries para Responsive Design */
+@media only screen and (max-width: 480px) {
+
     .header-Home {
-        margin: 5px 10px 0px 20px;
-        padding-left: 55px;
+        justify-content: center;
+        padding: 20px 10px;
     }
 
-    .mainHome {
-        flex-direction: column;
+    .main-home {
+        grid-template-columns: 1fr;
+        /* Cambia el diseño de 2 columnas a 1 */
+        padding: 20px 10px;
     }
 
-    .ContainerLogo {
-        width: 70%;
-        margin-left: 0px;
-        padding: 0%;
-        text-align: left;
-        align-items: center; /* Corrección: align-content a align-items */
+    .left-side-home,
+    .right-side-home {
+        justify-content: center;
+        text-align: center;
     }
 
-    .logo {
-        margin-left: 5%;
+    .title-home {
+        font-size: 32px;
+        padding: 10px 0;
     }
 
-    .welcomeMessage {
+    .p-home {
+        font-size: 16px;
+    }
+
+    .see-all-button {
+        width: 150px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .logo-home {
         width: 100%;
-        margin: 2px 2px 2px 0px;
-        align-items: center;
-    }
-
-    h1 {
-        font-size: 40px;
-        margin-left: 0px;
-    }
-
-    p {
-        font-size: 24px;
-    }
-
-    .seeallPuzzlesButton {
-        font-size: 24px;
-        width: 100%;
-        margin-bottom: 0px;
-        padding: 0%;
+        /* Asegúrate de que la imagen no se salga de la pantalla */
+        max-width: 300px;
+        /* Puedes ajustar este valor según tus necesidades */
     }
 }
