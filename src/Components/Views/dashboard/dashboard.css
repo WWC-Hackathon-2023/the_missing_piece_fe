@@ -6,8 +6,11 @@
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin-bottom: 60px;
-    padding-left: 25%;
+    padding-left: 20%;
+}
+
+.user-name-profile {
+    font-size: 30px;
 }
 
 .profile-btn-section {
@@ -50,14 +53,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 700;
     border: none;
     border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
-    width: 200px; /* Ancho común para botones */
-    height: 50px; /* Altura común para botones */
+    width: 160px; /* Ancho común para botones */
+    height: 40px; /* Altura común para botones */
     margin: 10px;
     gap: 0.625rem;
     transition: background-color 0.3s ease-in-out;
@@ -67,13 +70,13 @@
 /* Estilos para botones específicos */
 .search-puzzles-btn {
     background-color: #5BB5D9;
-    width: 280px;
+    width: 250px;
 }
 
 .search-puzzles-btn:hover {
     background-color: #F2955E;
     color: black;
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.25);
 }
 
 .profile-positive-btn {
@@ -92,11 +95,12 @@
 }
 
 .close-request-btn:hover {
+    background-color:#5BB5D9;
     box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
 }
 
 .withdraw-request-btn {
-    width: 280px;
+    width: 230px;
     background: #F2955E;
     color: black;
 }
@@ -109,6 +113,14 @@
     text-decoration: none; /* Elimina el subrayado */
     color: inherit;
 }
+
+/*------- DIVS Buttons and img ----------------------*/
+
+.btn-request-div {
+    display: flex;
+    align-items: center;
+}
+
 /* ------------------- ICONS STYLES -------------------------------------*/
 .icons-profile {
     height: 50px;
@@ -130,10 +142,23 @@
 /* ---------------------- REQUEST SECTION STYLES -------------------------*/
 .requests {
     border-top: 0.5px solid #D95043;
-    padding-top: 10px;
+    padding: 20px;
+    gap: 10px;
 }
 
 .title-section {
-    font-weight: 800;
-    font-size: 40px;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.puzzle-info-container {
+    display: flex;
+    gap: 15px;
+}
+
+/* ---------------------------- IMG STYLES ------------------------------*/
+.puzzle-img-dashboard {
+    height: 150px;
+    width: auto;
+    padding: 20px;
 }

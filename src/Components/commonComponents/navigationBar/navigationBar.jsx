@@ -18,11 +18,11 @@ export default function NavigationBar() {
           </li>
           <li>
             <Link to="/myCollection" className="nav-bar-button">
-              My Puzzles
+              My Collection
             </Link>
           </li>
           <li>
-            <Link to="/searchPuzzles" className="nav-bar-button">
+            <Link to="/index" className="nav-bar-button">
               Search for Puzzles
             </Link>
           </li>
