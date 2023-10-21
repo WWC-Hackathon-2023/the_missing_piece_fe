@@ -123,3 +123,195 @@ h2 {
 .containerInfPuzzle.hidden {
   max-height: none; /* Restablece la altura máxima para mostrar todos los elementos */
 }
+
+
+.all-index {
+  margin: 20px;
+}
+
+.search-index-bar{
+  display: flex;
+  flex-direction: row;
+  margin: 60px 20px 5px 40px;
+  align-items: baseline
+}
+
+
+.title-index {
+  font-size: 48px;
+  font-weight: bold;
+  margin-right: 30px;
+}
+
+.searchZipCodeInput {
+  padding-right: 40px;
+  border-radius: 20px;
+  height: 30px;
+  margin-right: 10px;
+}
+.fa-search {
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: #131212;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  width: 180px;
+  margin: 20px;
+}
+
+.link-search-zip-code {
+  text-decoration: none; 
+  color: #D9737B; 
+  font-size: 24px; 
+  margin-left: 20px; 
+}
+
+/* Puzzle pieces box  */
+
+.piece-icon-box {
+  display: flex;
+  flex-direction: column; /* Cambia a una dirección de columna para centrar verticalmente */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  width: 100%;
+  margin-left: 60px;
+  /* margin-right: 140px; */
+  height: 600px;
+}
+
+.display-available-puzzles{
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+
+.image-puzzle-zip-code{
+  width: 250px;
+  height: 150px;
+}
+
+.Puzzles-zip-code {
+  font-size: 40px;
+  color: #131212;
+  margin-left: 40px;
+  margin-top: 40px;
+}
+
+.link-puzzle-Show-Page {
+  text-decoration: none; 
+  color: #131212;
+  margin-left: 40px;
+}
+
+.title-puzze-inf-puzzle{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description-puzze-inf-puzzle{
+  font-size: 20px;
+  font-weight: lighter;
+}
+
+
+/*piece icon*/
+
+.container-piece-icon {
+  animation: spin 20s linear infinite;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateY(0deg) rotateX(0deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+
+.piece-icon {
+  width: 250px;
+  height: 250px;
+}
+
+
+
+/*Container puzzle if*/
+
+
+.containerInfPuzzle {
+  background-color: #fff2ea;
+  align-items: center;
+  text-align: center;
+  width: 300px;
+  padding: 10px;
+  height: 300px;
+  margin: 15px 15px 15px 60px;
+  border-radius: 10px;
+ 
+}
+
+.puzzle {
+  width: 60%;
+  margin: 5px;
+}
+
+.showMoreButton {
+  background-color: #131212;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 10px;
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: bold;
+  width: 180px;
+  }
+
+.showMoreindex {
+  text-align: center;
+}
+
+
+
+/* show more*/
+.containerInfPuzzle {
+  max-height: 400px; /* Establece la altura máxima inicial */
+  overflow: hidden; /* Oculta los elementos que excedan la altura máxima */
+}
+
+.containerImagePuzzles {
+  display: inline-block;
+  width: 50%; /* Para que se muestren dos elementos por línea */
+  /* Otros estilos para cada imagen, como margen, espaciado, etc. */
+}
+
+/* Estilo del botón "Show More" */
+.showMoreButton {
+  background-color: #131212;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Estilo adicional para los elementos ocultos */
+.containerInfPuzzle.hidden {
+  max-height: none; /* Restablece la altura máxima para mostrar todos los elementos */
+}
+
+.message-show-boton{
+  font-size: 28px;
+  text-align: center;
+}
