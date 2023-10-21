@@ -8,33 +8,35 @@ export default function Home() {
 
     return (
         <>
-            <header className="header-Home">
-                <SignUpButton />
-                <LogInButton />
-            </header>
+            <div className="app-container">
+                <header className="header-Home">
+                    <SignUpButton />
+                    <LogInButton />
+                </header>
 
-            <div className="main-home">
-                <div className="left-side-home">
-                    <h1 className='title-home'>Welcome To The Puzzle Community!</h1>
-                    <p className='p-home'>If you have a collection of puzzles and you're eager to swap
-                        them for new challenges, you're in the right spot. Join our community
-                        of fellow puzzle enthusiasts and dive into a world of delightful exchanges.
-                        Let's share the joy of solving puzzles together!
-                    </p>
-                    <Link to="/index">
-                        <button className="see-all-button">See All Puzzles</button>
-                    </Link>
+                <div className="main-home">
+                    <div className="left-side-home">
+                        <h1 className='title-home'>Welcome To The Puzzle Community!</h1>
+                        <p className='p-home'>If you have a collection of puzzles and you're eager to swap
+                            them for new challenges, you're in the right spot. Join our community
+                            of fellow puzzle enthusiasts and dive into a world of delightful exchanges.
+                            Let's share the joy of solving puzzles together!
+                        </p>
+                        <Link to="/index">
+                            <button className="see-all-button">See All Puzzles</button>
+                        </Link>
+                    </div>
+
+                    <div className="right-side-home">
+                        <img src={logo_title} className="logo-home" alt="The Missing Piece" />
+                    </div>
+
                 </div>
 
-                <div className="right-side-home">
-                    <img src={logo_title} className="logo-home" alt="The Missing Piece" />
-                </div>
-
+                <footer className='foo-ter'>
+                    <h4>© 2023 The Missing Piece Team</h4>
+                </footer>
             </div>
-
-            <footer className='foo-ter'>
-                <h4>© 2023 The Missing Piece Team</h4>
-            </footer>
         </>
     )
 }

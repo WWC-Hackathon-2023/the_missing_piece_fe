@@ -3,7 +3,8 @@
   background-repeat: no-repeat;
   background-position: right top;
   background-size: 42% auto;
-  height: 100%;
+  z-index: 2;
+  min-height: 100vh;
 }
 
 .header-signup {
@@ -66,7 +67,7 @@
 .emailInput,
 .phoneInput,
 .passwordInput {
-  width: 100%;
+  width: 300px;
   border-radius: 20px;
   font-size: 20px;
   color: #131212;
