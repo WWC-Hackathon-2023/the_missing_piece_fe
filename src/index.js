@@ -10,6 +10,7 @@ import PuzzleShowPage from './Components/Views/puzzleShowPage/puzzleShowPage.jsx
 import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
 import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
 import EditPuzzle from './Components/Views/editPuzzle/editPuzzle.jsx';
+import BorrowerInfo from './Components/Views/borrowerInfo/borrowerInfo.jsx';
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,10 @@ const router = createBrowserRouter([
     path: "/editPuzzle",
     element: <EditPuzzle />,
   },
-
+  {
+    path: "/borrowerInfo",
+    element: <BorrowerInfo />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
