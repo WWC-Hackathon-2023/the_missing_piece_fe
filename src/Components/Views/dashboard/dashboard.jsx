@@ -58,7 +58,11 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="btn-div">
-            <button className="search-puzzles-btn btn">Search for Puzzles</button>
+            <button className="search-puzzles-btn btn">
+            <Link to="/index" className="search-puzzles">
+              Search for Puzzles
+            </Link>
+            </button>
           </div>
         </section>
         <section className="requests-for-user requests">
