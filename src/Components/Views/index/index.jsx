@@ -1,7 +1,7 @@
 import "./index.css";
 import LogInButton from "../../commonComponents/logInButton/logInButton.jsx";
 import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
-import Logo from "../../commonComponents/logo/logo.jsx";
+import NavigationBar from "../../commonComponents/navigationBar/navigationBar.jsx"
 import puzzle_1 from "../../../assets/puzzle_1.jpg";
 import piece_icon from "../../../assets/piece_icon.png";
 import { Link } from "react-router-dom";
@@ -43,11 +43,8 @@ export default function Index() {
 
   return (
     <>
-      <header className="headerIndex">
-        <div className="containerImageLogo">
-        <Logo />
-        </div>
-        
+       <header className="headerProfile">
+        <NavigationBar />
       </header>
       <div className="all">
         <h2>Explore Puzzles by Zip Code</h2>

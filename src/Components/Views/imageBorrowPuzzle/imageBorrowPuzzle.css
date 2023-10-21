@@ -8,7 +8,6 @@
     margin-top: 30px;
 }
 
-/* left section*/
 .left-main-image-borrow-puzzle {
   display: flex;
   flex-direction: column;
@@ -40,9 +39,6 @@
   color: #D9737B;
   margin-top: 10px;
 }
-
-
-/* right section*/
 
 .right-image-borrow-puzzle {
   margin-top: 20px;
