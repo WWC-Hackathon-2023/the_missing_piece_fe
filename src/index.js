@@ -11,6 +11,7 @@ import AddNewPuzzle from './Components/Views/addNewPuzzle/addNewPuzzle.jsx';
 import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
 import EditPuzzle from './Components/Views/editPuzzle/editPuzzle.jsx';
 import MyCollection from './Components/Views/myCollection/myCollection.jsx';
+import ImageBorrowPuzzle from "./Components/Views/imageBorrowPuzzle/imageBorrowPuzzle.jsx"
 
 const router = createBrowserRouter([
   {
@@ -57,7 +58,10 @@ const router = createBrowserRouter([
     path: "/editPuzzle",
     element: <EditPuzzle />,
   },
-
+  {
+    path: "/imageBorrowPuzzle",
+    element: <ImageBorrowPuzzle />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
