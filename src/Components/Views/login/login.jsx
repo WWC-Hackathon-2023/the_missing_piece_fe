@@ -9,7 +9,7 @@ export default function Login() {
     <>
       <div className="topDiv">
         <div className="left">
-          <header className="headerIndex">
+          <header className="header-login">
             <Logo />
           </header>
           <div className="mainLogin">

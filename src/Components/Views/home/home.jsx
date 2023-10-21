@@ -8,7 +8,7 @@ export default function Home() {
 
     return (
         <>
-            <header className="headerHome">
+            <header className="header-Home">
                 <SignUpButton />
                 <LogInButton />
             </header>
