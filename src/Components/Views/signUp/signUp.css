@@ -1,98 +1,89 @@
-html,
-body {
-  font-family: "League Spartan", sans-serif;
+.backgroung-signup {
+  background-image: url('../../../assets/background_pieces.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 42% auto;
   height: 100%;
-  margin: 0;
-  padding: 0;
-  /* background: linear-gradient(to top, #fae1e3 20%, #ffffff 30%); */
 }
 
-#root {
-  background: linear-gradient(to top, #fae1e3 20%, #ffffff 30%);
-  min-height: 100vh;
+.header-signup {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 35px 50px 0px 10px;
+  gap: 20px;
 }
 
-.topDiv {
-  display: flex;
-  margin: 0px;
-  padding: 0px;
-}
-
-.headerIndex {
-  width: 500px;
-  position: relative;
-  z-index: 1;
-  margin-left: 50px;
-}
-
-.left {
-  width: 50%;
-  position: relative;
-  z-index: 1;
-  width: 50%;
-  margin-bottom: 50px;
-}
-
-.div-second-seach-puzzle-button {
-  display: flex;
-  position: relative;
-  z-index: 1;
-  justify-content: flex-end;
-  margin-right: 30px;
+.logo-container {
+  flex-grow: 1;
 }
 
 .second-seach-puzzle-button {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
   color: #131212;
   border: 2px solid #131212;
   border-radius: 20px;
-  padding: 10px 20px;
   cursor: pointer;
-  font-size: 25px;
-  width: 270px;
-  margin: 20px;
-
-  position: relative;
+  font-size: 20px;
+  width: 190px;
+  height: 45px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   z-index: 1;
 }
 
-.signUpHeader {
-  width: 50%;
-  margin: 20px;
-  position: relative;
-  z-index: -1;
+.second-seach-puzzle-button:hover {
+  background-color: var(--salmon);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.mainSignup {
+.second-seach-puzzle-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.left-side-signup {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  text-align: center;
+  justify-content: center;
   align-items: center;
+  gap: 10px;
+}
+
+.title-signup {
+  font-size: 30px;
+  padding-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  font-weight: bolder;
+  text-align: center;
 }
 
 .fullNameInput,
-.ZipCodeInput,
+.zip-code-input,
 .emailInput,
 .phoneInput,
 .passwordInput {
-  width: 350px;
+  width: 100%;
   border-radius: 20px;
-  font-size: 25px;
+  font-size: 20px;
   color: #131212;
   background: linear-gradient(to bottom, #f5ecec);
   text-align: center;
   box-shadow: 1px 1px 7px #59343e inset;
-  margin: 10px 0;
-  padding: 15px;
   border: none;
   resize: none;
   font-family: "League Spartan", sans-serif;
   outline: none;
 }
 
-input::placeholder,
-textarea::placeholder {
+.fullNameInput::placeholder,
+.ZipCodeInput::placeholder,
+.emailInput::placeholder,
+.phoneInput::placeholder,
+.passwordInput::placeholder {
   font-family: "League Spartan", sans-serif;
   color: #8f8686;
 }
@@ -102,148 +93,127 @@ textarea::placeholder {
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 10px 20px;
   cursor: pointer;
-  font-size: 25px;
-  width: 200px;
-  margin: 20px;
+  font-size: 20px;
+  width: 190px;
+  height: 45px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
 
-.rightSignup {
-  width: 50%;
+.signUpButtonBlack:hover {
+  background-color: var(--salmon);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: black;
 }
 
-.imagenSignup {
+.signUpButtonBlack:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.image-signup {
   width: 100%;
   height: 100%;
 }
 
-.Log-In-Here {
-  font-size: 30px;
-  text-align: center;
+.log-in-message {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: -10px;
 }
 
-/* CSS */
-
-#root {
-  min-height: 100vh;
-  position: relative;
+.log-in-here {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--text);
+  padding-bottom: 5px;
+  font-weight: bold;
 }
 
-.all {
-  padding-bottom: 100px; /* Añade margen inferior para dejar espacio para el footer */
+/* Estilos de la barra de desplazamiento */
+::webkit-scrollbar {
+  width: 12px;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #FAE1E3;
-  color: #131212;
-  text-align: center;
-  padding: 10px 0;
+::-webkit-scrollbar {
+  width: 12px;
 }
 
+/* El fondo */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
 
+/* La barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
 
+/* La barra de desplazamiento en hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
+/* Media Queries */
 
-/* Media query para dispositivos como iPhone XR (aproximadamente) */
+@media (max-width: 768px) {
+  .backgroung-signup {
+    background-image: none;
+    padding: 20px;
+  }
 
-@media screen and (max-width: 414px) {
-  .topDiv {
-    flex-direction: column;
-    align-items: center;
+  .header-signup {
+    grid-template-columns: 1fr;
+    padding: 15px 20px;
+    gap: 10px;
     text-align: center;
-    margin: 0px;
   }
 
-  .headerIndex {
-     margin-left: 0px;
-  }
-
-  h1 {
-    margin-left: 20px;
-    text-align: center;
-  }
-
-  .left,
-  .signUpHeader,
-  .rightSignup {
+  .second-seach-puzzle-button {
     width: 100%;
-    margin: 10px;
-    padding: 0px;
+    margin-top: 20px;
   }
 
-  .imagelogo {
-    margin: 20px;
-  }
-
-  .mainSignup {
-    text-align: left;
+  .left-side-signup {
+    width: 100%;
+    padding: 20px;
   }
 
   .fullNameInput,
-  .ZipCodeInput,
+  .zip-code-input,
   .emailInput,
   .phoneInput,
   .passwordInput {
-    width: 70%;
-    margin: 10px 0;
-  }
-
-  .signUpButtonBlack {
-    width: 120%;
-    margin: 17px 0;
-  }
-}
-
-.imagenSignup {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  opacity: 0.4;
-}
-
-.second-seach-puzzle-button {
-  margin-right: 40px;
-}
-
-/* Media query para pantallas más anchas, como la vista horizontal */
-@media screen and (min-width: 415px) {
-  .topDiv {
-    flex-direction: row;
-  }
-
-  .left,
-  .rightSignup {
-    width: 50%;
-  }
-
-  h1 {
-    margin: 5px 0px 10px 20px;
-  }
-
-  .left {
-    position: relative;
-    z-index: 1;
-  }
-
-  .rightSignup {
-    position: relative;
-    z-index: 1;
-  }
-
-  .imagenSignup {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 0;
     width: 100%;
-    height: 100%;
-    opacity: 0.9;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .backgroung-signup {
+    background-position: right 20px top 20px;
+    background-size: 30% auto;
+    padding: 20px;
+  }
+
+  .header-signup {
+    padding: 20px 30px;
+  }
+
+  .left-side-signup {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .fullNameInput,
+  .zip-code-input,
+  .emailInput,
+  .phoneInput,
+  .passwordInput {
+    width: 100%;
   }
 }
