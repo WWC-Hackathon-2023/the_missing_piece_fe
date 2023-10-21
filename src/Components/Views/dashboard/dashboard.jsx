@@ -30,7 +30,11 @@ export default function Dashboard() {
                   Add Puzzle
                 </Link>
               </button>
-              <button className="update-profile-btn profile-positive-btn btn" /*onClick={onEditProfileClick}*/>Update Profile</button>
+              <button className="profile-positive-btn btn">
+                <Link to="/updateProfile" className="update-profile-btn">
+                  Update Profile
+                </Link>
+              </button>
             </div>
             <div className="user-info">
               <h2 className="user-name-profile">Andrea Ramirez</h2> {/* Aquí sería con interpolación {user.name} */}
@@ -58,7 +62,11 @@ export default function Dashboard() {
             </div>
           </div>
           <div className="btn-div">
-            <button className="search-puzzles-btn btn">Search for Puzzles</button>
+            <button className="search-puzzles-btn btn">
+              <Link to="/index" className="search-puzzles">
+                Search for Puzzles
+              </Link>
+            </button>
           </div>
         </section>
         <section className="requests-for-user requests">
@@ -68,9 +76,13 @@ export default function Dashboard() {
             <figure className="puzzle-img-div">
               <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
             </figure>
+            <div className="request-info-text">
+              <h3>Puzzle Name</h3>
+              <p>Request date</p>
+            </div>
             <div className="btn-request-div">
-              <button className="profile-positive-btn accept-btn btn">Accept</button>
-              <button className="close-request-btn btn">Deny</button>
+              <button className="profile-positive-btn accept-deny-btn btn">Accept</button>
+              <button className="close-request-btn accept-deny-btn btn">Deny</button>
             </div>
           </div>
         </section>
@@ -80,6 +92,10 @@ export default function Dashboard() {
             <figure className="puzzle-img-div">
               <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
             </figure>
+            <div className="request-info-text">
+              <h3>Puzzle Name</h3>
+              <p>Request date</p>
+            </div>
             <div className="info-request-puzzle">
               <h3> {/* Título del puzzle*/} </h3>
               <p> {/* Fecha de solicitud del puzzle */} </p>
