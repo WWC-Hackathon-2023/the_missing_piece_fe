@@ -1,0 +1,142 @@
+.main-image-borrow-puzzle {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 50px;
+}
+.title-imageBorrowPuzzle{
+    margin-top: 30px;
+}
+
+/* left section*/
+.left-main-image-borrow-puzzle {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 40px;
+}
+
+.title-puzle-name {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding-top: 10px;
+}
+
+.content-img-puzzle-pcture {
+  width: 400px;
+  height: 400px;
+}
+
+.puzzle-img {
+  width: 550px;
+  height: 400px;
+}
+
+.message{
+  width: 550px;
+  font-size: 40;
+  font-weight: bold;
+  color: #D9737B;
+  margin-top: 10px;
+}
+
+
+/* right section*/
+
+.right-image-borrow-puzzle {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  padding-right: 70px;
+}
+
+.owner-title,
+.puzzleDescription,
+.pieces-total-count,
+.piece-icode-img-container,
+.zip-code-container,
+.note-puzzle-inf,
+.status-puzzle-inf {
+  margin-bottom: 20px;
+}
+
+.zip-code-container,
+.pieces-total-countainer  {
+  display: flex;
+  flex-direction: row;
+}
+
+.piece-icode-img-container{
+  margin-top: 8px;
+
+}
+
+.zip-code-num-container,
+.piece-icode-qt-container
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 5px;
+}
+
+.status-puzzle{
+  font-size: 32px;
+}
+
+.container-status-puzzle{
+  width: 200px;
+  padding: 10px;
+  background-color: #F2CA99;
+  text-align: center;
+}
+
+@media screen and (max-width: 414px) {
+  .main-image-borrow-puzzle {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+  
+  .title-imageBorrowPuzzle {
+    margin-top: 30px;
+  }
+  
+  /* left section */
+  .left-main-image-borrow-puzzle {
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .title-puzle-name {
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+  }
+  
+  .content-img-puzzle-pcture {
+    width: 100%;
+    height: auto;
+  }
+  
+  .puzzle-img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .message {
+    width: 100%;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  /* right section */
+  .right-image-borrow-puzzle {
+    margin-top: 20px;
+    width: 100%;
+    padding-right: 0;
+  }
+}
