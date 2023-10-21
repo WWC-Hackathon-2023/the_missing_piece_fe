@@ -10,13 +10,8 @@ body {
     padding: 0;
 }
 
-html {
-    background: linear-gradient(to top, #FAE1E3 20%, #FFFFFF 30%);
-}
-
 body {
     height: 100%;
-    margin: 20px;
 }
 
 .header-Home {

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=League+Spartan');
 
+
 * {
     margin: 0;
     font-family: "League Spartan", sans-serif;
@@ -79,8 +80,7 @@
 
 /* Estilos para inputs y textareas */
 input,
-textarea,
-select {
+textarea {
     border-radius: 20px;
     font-size: 25px;
     color: #131212;
@@ -97,16 +97,14 @@ select {
 
 /* Estilo para el placeholder */
 input::placeholder,
-textarea::placeholder,
-select::placeholder {
+textarea::placeholder {
     font-family: 'League Spartan', sans-serif;
     color: #8f8686;
 }
 
 /* Efecto de foco */
 input:focus,
-textarea:focus,
-select::placeholder {
+textarea:focus {
     box-shadow: 0 0 10px #e7a6ab;
 }
 

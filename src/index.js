@@ -12,6 +12,7 @@ import UpdateProfile from './Components/Views/updateProfile/updateProfile.jsx';
 import EditPuzzle from './Components/Views/editPuzzle/editPuzzle.jsx';
 import MyCollection from './Components/Views/myCollection/myCollection.jsx';
 import ImageBorrowPuzzle from "./Components/Views/imageBorrowPuzzle/imageBorrowPuzzle.jsx"
+import BorrowerInfo from './Components/Views/borrowerInfo/borrowerInfo.jsx';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,9 @@ const router = createBrowserRouter([
   {
     path: "/imageBorrowPuzzle",
     element: <ImageBorrowPuzzle />,
+  }, {
+    path: "/borrowerInfo",
+    element: <BorrowerInfo />,
   },
 ]);
 
