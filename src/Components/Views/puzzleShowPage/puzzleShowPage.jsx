@@ -1,28 +1,10 @@
-import React, { useState, useEffect } from 'react';
 import "./puzzleShowPage.css";
 import HeaderLogout from "../../../Components/commonComponents/headerLogout/headerLogout.jsx";
 import puzzle_1 from "../../../assets/puzzle_1.jpg";
 import zipIcon from "../../../assets/zip_icon.png";
 import piece_icon from "../../../assets/piece_icon.png";
-import { getPuzzles } from '../../../Services/UserServices';
 
 export default function PuzzleShowPage() {
-
-  const [puzzles, setPuzzles] = useState([]);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await getPuzzles(12345);
-        const data = await response;
-        console.log(data);
-        setPuzzles(data.data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -33,18 +15,8 @@ export default function PuzzleShowPage() {
 
         <div className="all-image-Borrow-Puzzle">
           <div className="left-image-Borrow-Puzzle">
-            <h1>Listado de Puzzles</h1>
-            <ul>
-              {puzzles.map((puzzle) => (
-                <li key={puzzle.id}>
-                  <h2>{puzzle.attributes.title}</h2>
-                  <p>{puzzle.attributes.description}</p>
-                  <img src={puzzle.attributes.puzzle_image_url} alt={puzzle.attributes.title} />
-                </li>
-              ))}
-            </ul>
             {/* AQUI VA LA LOGICA PARA RENDERIZAR EL PUZZLE SEGUN CORRESPONDA */}
-            {/* <div className="title-image-Borrow-Puzzle">
+            <div className="title-image-Borrow-Puzzle">
               <h2> PUZZLE NAME: Enchanted Landscapes</h2>
             </div>
 
@@ -52,7 +24,7 @@ export default function PuzzleShowPage() {
               src={puzzle_1}
               className="puzzle--image-Borrow-Puzzle"
               alt="The Missing Piece"
-            /> */}
+            />
           </div>
 
           <div className="right-Puzzle-Show-Page">
