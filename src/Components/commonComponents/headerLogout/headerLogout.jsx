@@ -13,8 +13,12 @@ export default function HeaderLogout() {
         </div>
 
         <div className="header-buttons-logout">
-          <SignUpButton />
-          <LogInButton />
+          <div className="header-signup-buttons-logout">
+            <SignUpButton />
+          </div>
+          <div className="header-login-buttons-logout">
+            <LogInButton />
+          </div>
         </div>
       </div>
     </>
