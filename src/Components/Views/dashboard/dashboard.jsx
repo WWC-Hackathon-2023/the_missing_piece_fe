@@ -76,9 +76,13 @@ export default function Dashboard() {
             <figure className="puzzle-img-div">
               <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
             </figure>
+            <div className="request-info-text">
+              <h3>Puzzle Name</h3>
+              <p>Request date</p>
+            </div>
             <div className="btn-request-div">
-              <button className="profile-positive-btn accept-btn btn">Accept</button>
-              <button className="close-request-btn btn">Deny</button>
+              <button className="profile-positive-btn accept-deny-btn btn">Accept</button>
+              <button className="close-request-btn accept-deny-btn btn">Deny</button>
             </div>
           </div>
         </section>
@@ -88,6 +92,10 @@ export default function Dashboard() {
             <figure className="puzzle-img-div">
               <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
             </figure>
+            <div className="request-info-text">
+              <h3>Puzzle Name</h3>
+              <p>Request date</p>
+            </div>
             <div className="info-request-puzzle">
               <h3> {/* Título del puzzle*/} </h3>
               <p> {/* Fecha de solicitud del puzzle */} </p>
