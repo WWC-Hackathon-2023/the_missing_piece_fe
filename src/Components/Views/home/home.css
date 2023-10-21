@@ -19,7 +19,7 @@ body {
     margin: 20px;
 }
 
-.headerHome {
+.header-Home {
     text-align: right;
     padding: 20px 130px 20px 20px;
 }
@@ -47,6 +47,8 @@ h1 {
 
 p {
     font-size: 36px;
+    margin-left: 15px;
+    margin-top: 50px;
 }
 
 .ContainerLogo {
@@ -64,6 +66,8 @@ p {
     font-size: 32px;
     font-weight: bold;
     width: 340px;
+    margin-top: 50px;
+    margin-left: 15px;
 }
 
 h4 {
@@ -71,15 +75,10 @@ h4 {
 }
 
 /* Media query para dispositivos Samsung iPhone XR (aproximadamente) */
-
 @media screen and (max-width: 414px) {
-    body {
-        margin: 10px;
-    }
-
-    .headerHome {
-        text-align: right;
-        margin: 10px 10px 10px 20px;
+    .header-Home {
+        margin: 5px 10px 0px 20px;
+        padding-left: 55px;
     }
 
     .mainHome {
@@ -87,11 +86,11 @@ h4 {
     }
 
     .ContainerLogo {
-        width: 100%;
+        width: 70%;
         margin-left: 0px;
         padding: 0%;
         text-align: left;
-
+        align-items: center; /* Corrección: align-content a align-items */
     }
 
     .logo {
@@ -100,13 +99,13 @@ h4 {
 
     .welcomeMessage {
         width: 100%;
-        margin: 2px;
+        margin: 2px 2px 2px 0px;
         align-items: center;
-
     }
 
     h1 {
         font-size: 40px;
+        margin-left: 0px;
     }
 
     p {
@@ -116,5 +115,7 @@ h4 {
     .seeallPuzzlesButton {
         font-size: 24px;
         width: 100%;
+        margin-bottom: 0px;
+        padding: 0%;
     }
 }
