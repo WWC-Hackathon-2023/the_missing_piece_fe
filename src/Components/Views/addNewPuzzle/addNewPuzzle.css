@@ -21,7 +21,6 @@
     padding: 20px;
     box-sizing: border-box;
     justify-content: center;
-    height: 100%;
 }
 
 .left-side {
@@ -50,7 +49,6 @@
         align-items: center;
     }
 }
-
 
 /* Estilo de la imagen */
 .image {
@@ -109,12 +107,12 @@ textarea:focus {
 }
 
 .input {
-    width: 90%;
+    width: 100%;
 }
 
 .text-area {
     height: 140px;
-    width: 90%;
+    width: 100%;
 }
 
 .subtitles {
@@ -132,7 +130,7 @@ textarea:focus {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.title-new-puzzle {
     font-size: 35px;
     padding-bottom: 10px;
 }
@@ -168,7 +166,6 @@ textarea:focus {
     background-color: #1C4259;
     color: white
 }
-
 
 .add-puzzle-button {
     background-color: #5BB5D9;

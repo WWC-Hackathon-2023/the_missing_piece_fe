@@ -14,7 +14,7 @@ export default function Home() {
                     <LogInButton />
                 </header>
 
-                <div className="main-home">
+                <main className="main-home">
                     <div className="left-side-home">
                         <h1 className='title-home'>Welcome To The Puzzle Community!</h1>
                         <p className='p-home'>If you have a collection of puzzles and you're eager to swap
@@ -31,7 +31,7 @@ export default function Home() {
                         <img src={logo_title} className="logo-home" alt="The Missing Piece" />
                     </div>
 
-                </div>
+                </main>
 
                 <footer className='foo-ter'>
                     <h4>© 2023 The Missing Piece Team</h4>

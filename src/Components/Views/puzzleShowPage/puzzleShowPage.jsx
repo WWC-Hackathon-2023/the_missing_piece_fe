@@ -14,9 +14,8 @@ export default function PuzzleShowPage() {
 
         <div className="all-image-Borrow-Puzzle">
           <div className="left-image-Borrow-Puzzle">
-            {/* AQUI VA LA LOGICA PARA RENDERIZAR EL PUZZLE SEGUN CORRESPONDA */}
             <div className="title-image-Borrow-Puzzle">
-              <h2> PUZZLE NAME: Enchanted Landscapes</h2>
+              <h2> Enchanted Landscapes</h2>
             </div>
 
             <img
@@ -36,7 +35,6 @@ export default function PuzzleShowPage() {
                 Explore captivating scenes of magical landscapes filled with
                 wonder and imagination.
               </p>
-              {/* Aquí sería con interpolación {description} */}
             </div>
 
             <div className="pieces-total-countainer">
