@@ -1,15 +1,35 @@
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-import ProfileSection from "./profileSection";
 import puzzle_10 from "../../../assets/puzzle_10.jpg";
+import zipIcon from "../../../assets/zip_icon.png";
+import emailIcon from "../../../assets/email.png";
+import phoneIcon from "../../../assets/phone.png";
+import iconPerson from "../../../assets/icon_person.png";
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
-
+import { useEffect, useState } from "react";
 
 const MySweetAlert = withReactContent(Swal);
 
 export default function Dashboard() {
+
+  const [responseData, setResponseData] = useState(null);
+
+  // Función para hacer la solicitud y obtener la respuesta
+  useEffect(() => {
+    // Mueve la lógica de fetchData aquí
+    const fetchDashboardData = async () => {
+      try {
+        const data = await fetchDashboardData(1); // Llama a la función del servicio API
+        setResponseData(data);
+      } catch (error) {
+        console.error('Error al obtener datos:', error);
+      }
+    };
+
+    fetchDashboardData(); // Llama a la función que obtiene los datos cuando el componente se monta.
+  }, []);
 
   const handleAcceptClick = () => {
     MySweetAlert.fire({
@@ -54,7 +74,81 @@ export default function Dashboard() {
           <NavigationBar />
         </header>
         <main className="main-profile">
-          <ProfileSection />
+          <section className="profile-btn-section">
+            <div className="profile-div">
+              <div className="profile-actions">
+                <img className="icon-person" src={iconPerson} alt="Profile Icon" />
+                <button className="profile-positive-btn btn">
+                  <Link to="/addNewPuzzle" className="add-puzzle-btn">
+                    Add Puzzle
+                  </Link>
+                </button>
+                <button className="profile-positive-btn btn">
+                  <Link to="/updateProfile" className="update-profile-btn">
+                    Update Profile
+                  </Link>
+                </button>
+              </div>
+              <div className="user-info">
+                {responseData ? (
+                  <>
+                    <div className="user-data-div">
+                      <img className="icons-profile" src={zipIcon} alt="Zip Icon" />
+                      <div className="user-data-text">
+                        <strong>Zip Code</strong>
+                        <p>{responseData.data.attributes.user_info.zip_code}</p>
+                      </div>
+                    </div>
+                    <div className="user-data-div">
+                      <img className="icons-profile" src={emailIcon} alt="Email Icon" />
+                      <div className="user-data-text">
+                        <strong>Email</strong>
+                        <p>{responseData.data.attributes.user_info.email}</p>
+                      </div>
+                    </div>
+                    <div className="user-data-div">
+                      <img className="icons-profile" src={phoneIcon} alt="Phone Icon" />
+                      <div className="user-data-text">
+                        <strong>Phone</strong>
+                        <p>{responseData.data.attributes.user_info.phone_number}</p>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <div>CARGANDO?</div>
+                )}
+                {/* <h2 className="user-name-profile">Andrea Ramirez</h2>
+                <div className="user-data-div">
+                  <img className="icons-profile" src={zipIcon} alt="Zip Icon" />
+                  <div className="user-data-text">
+                    <strong>Zip Code</strong> 
+                    <p>7100000</p>
+                  </div>
+                </div>
+                <div className="user-data-div">
+                  <img className="icons-profile" src={emailIcon} alt="Email Icon" />
+                  <div className="user-data-text">
+                    <strong>Email</strong>
+                    <p>andrea@mail.org</p>
+                  </div>
+                </div>
+                <div className="user-data-div">
+                  <img className="icons-profile" src={phoneIcon} alt="Phone Icon" />
+                  <div className="user-data-text">
+                    <strong>Phone</strong>
+                    <p>+56 (123)4563789</p>
+                  </div>
+                </div> */}
+              </div>
+            </div>
+            <div className="btn-div">
+              <button className="search-puzzles-btn btn">
+                <Link to="/index" className="search-puzzles">
+                  Search for Puzzles
+                </Link>
+              </button>
+            </div>
+          </section>
           <section className="requests-for-user requests">
             {/* Aquí habrá que ver si estos divs se tienen que cambiar, porque lo que muestran dependerá del status del puzzle */}
             <div className="title-section">Request to Borrow My Puzzles</div>

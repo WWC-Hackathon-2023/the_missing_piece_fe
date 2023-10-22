@@ -30,3 +30,14 @@ export const getPuzzles = async (zipCode) => {
     throw error.message;
   }
 };
+
+export const fetchDashboardData = async (userId) => {
+  try {
+    const response = await fetch(`https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/dashboard`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+    throw error; // Re-lanza el error para que pueda ser manejado por el componente.
+  }
+};
