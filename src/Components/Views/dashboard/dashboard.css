@@ -180,9 +180,11 @@
         width: 100%;
         padding-left: 0;
     }
+
     .user-name-profile {
         font-size: 24px;
     }
+
     .btn-div {
         margin-left: 0;
     }
@@ -196,9 +198,11 @@
         width: 90%;
         padding-left: 10%;
     }
+
     .user-name-profile {
         font-size: 30px;
     }
+
     .btn-div {
         margin-left: 60%;
     }
