@@ -32,6 +32,45 @@ export default function Dashboard() {
     fetchData(1); // Llama a la función que obtiene los datos cuando el componente se monta.
   }, []);
 
+  function extractOwnerLoans(response) {
+    if (!response || !response.data || !response.data.attributes.owner_loans) {
+      return [];
+    }
+    return response.data.attributes.owner_loans;
+  }
+
+  const ownerPuzzles = extractOwnerLoans(responseData);
+
+  function renderButtons(puzzleL) {
+    if (puzzleL.loan_status === "Pending") {
+      return (
+        <>
+          <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzleL.id)}>
+            Accept
+          </button>
+          <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzleL.id)}>
+            Deny
+          </button>
+        </>
+      );
+    } else if (puzzleL.loan_status === "Accepted") {
+      return (
+        <button className="profile-positive-btn btn" onClick={() => handleAcceptedClick(puzzleL.id)}>
+          Accepted
+        </button>
+      );
+    } else if (puzzleL.loan_status === "Denied") {
+      return (
+        <button className="profile-negative-btn btn" onClick={() => handleDeniedClick(puzzleL.id)}>
+          Denied
+        </button>
+      );
+    }
+  
+    // Si el estado es desconocido, puedes retornar algo o un botón por defecto.
+    return null;
+  }
+
   const handleAcceptClick = () => {
     MySweetAlert.fire({
       title: 'Are you sure?',
@@ -93,6 +132,7 @@ export default function Dashboard() {
               <div className="user-info">
                 {responseData ? (
                   <>
+                    <h2 className="user-name-profile">{responseData.data.attributes.user_info.full_name}</h2>
                     <div className="user-data-div">
                       <img className="icons-profile" src={zipIcon} alt="Zip Icon" />
                       <div className="user-data-text">
@@ -118,28 +158,6 @@ export default function Dashboard() {
                 ) : (
                   <div>CARGANDO?</div>
                 )}
-                {/* <h2 className="user-name-profile">Andrea Ramirez</h2>
-                <div className="user-data-div">
-                  <img className="icons-profile" src={zipIcon} alt="Zip Icon" />
-                  <div className="user-data-text">
-                    <strong>Zip Code</strong> 
-                    <p>7100000</p>
-                  </div>
-                </div>
-                <div className="user-data-div">
-                  <img className="icons-profile" src={emailIcon} alt="Email Icon" />
-                  <div className="user-data-text">
-                    <strong>Email</strong>
-                    <p>andrea@mail.org</p>
-                  </div>
-                </div>
-                <div className="user-data-div">
-                  <img className="icons-profile" src={phoneIcon} alt="Phone Icon" />
-                  <div className="user-data-text">
-                    <strong>Phone</strong>
-                    <p>+56 (123)4563789</p>
-                  </div>
-                </div> */}
               </div>
             </div>
             <div className="btn-div">
@@ -153,8 +171,27 @@ export default function Dashboard() {
           <section className="requests-for-user requests">
             {/* Aquí habrá que ver si estos divs se tienen que cambiar, porque lo que muestran dependerá del status del puzzle */}
             <div className="title-section">Request to Borrow My Puzzles</div>
-            <div className="puzzle-info-container">
-              <figure className="puzzle-img-div">
+            {ownerPuzzles.map((puzzle, index) => (
+              <div className="puzzle-info-container" key={index}>
+                <figure className="puzzle-img-div">
+                  <img className="puzzle-img-dashboard" src={puzzle.puzzle_image_url} alt={puzzle.puzzle_title} />
+                </figure>
+                <div className="request-info-text">
+                  <h3>{puzzle.puzzle_title}</h3>
+                  <p>{puzzle.loan_created_at}</p>
+                </div>
+                <div className="btn-request-div">
+                  <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzle.id)}>
+                    Accept
+                  </button>
+                  <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzle.id)}>
+                    Deny
+                  </button>
+                </div>
+              </div>
+            ))}
+
+            {/* <figure className="puzzle-img-div">
                 <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
               </figure>
               <div className="request-info-text">
@@ -164,8 +201,7 @@ export default function Dashboard() {
               <div className="btn-request-div">
                 <button className="profile-positive-btn accept-deny-btn btn" onClick={handleAcceptClick}>Accept</button>
                 <button className="profile-positive-btn accept-deny-btn btn" onClick={handleDenyClick}>Deny</button>
-              </div>
-            </div>
+              </div> */}
           </section>
           <section className="user-requests requests">
             <div className="title-section">Puzzles I have requested</div>
