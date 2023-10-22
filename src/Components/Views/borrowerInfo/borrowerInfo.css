@@ -1,6 +1,23 @@
+@import '/src/index.css';
+
 /* Estilo base para el contenedor con Grid */
 .container-borrower {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
+}
+
+.borrowers-name {
+    font-size: 35px;
+}
+
+.user-info {
+    padding-top: 20px;
+    line-height: 1.2;
+}
+
+.message-borrower-page {
+    font-size: 25px;
+    line-height: 1.2;
+    padding-right: 80px;
+    color: var(--salmon);
 }

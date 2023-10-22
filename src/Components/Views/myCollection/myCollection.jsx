@@ -36,7 +36,7 @@ export default function MyCollection() {
               <button className="update-puzzle-btn">Update Puzzle</button>
               <h2 className='puzzle-title-collection'>{puzzle.attributes.title}</h2>
               <div className="status">
-                <h4>Status: </h4> <span className='status-message'>{puzzle.attributes.status}</span>
+                <h4>Status: </h4>&nbsp;<span className='status-message'>{puzzle.attributes.status}</span>
               </div>
               <p>{puzzle.attributes.description.split(' ').slice(0, 30).join(' ')}...</p>
             </div>

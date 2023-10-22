@@ -6,12 +6,14 @@
     min-height: 100vh;
 }
 
+
 .main-login {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 100px;
     padding: 80px 50px 0px 50px;
 }
+
 
 .title-login {
     padding-top: 10px;
@@ -22,7 +24,9 @@
     text-align: center;
 }
 
+
 /* Media Queries */
+
 
 @media (max-width: 768px) {
     .backgroung-login {
@@ -30,10 +34,12 @@
         padding: 20px;
     }
 
+
     .main-login {
         grid-template-columns: 1fr;
         padding: 20px;
     }
+
 
     .header-signup {
         flex-direction: column;
@@ -41,19 +47,23 @@
         gap: 10px;
     }
 
+
     .second-seach-puzzle-button {
         width: 100%;
         margin-top: 10px;
     }
 
+
     .left-side-signup {
         padding: 20px;
     }
+
 
     .emailInput,
     .passwordInput {
         width: 100%;
     }
+
 
     .signUpButtonBlack {
         width: 180px;
