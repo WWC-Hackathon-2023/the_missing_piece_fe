@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
 .title-home {
     font-size: 50px;
     line-height: 1;
@@ -18,7 +24,7 @@
 }
 
 .p-home {
-    font-size: 20px;
+    font-size: 23px;
     line-height: 1;
     color: var(--text);
     padding-bottom: 20px;
@@ -38,6 +44,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    width: 100%;
+    /* Ensure it covers the full width */
     background: linear-gradient(to top, #fae1e3 20%, #ffffff 30%);
     z-index: 1;
 }
