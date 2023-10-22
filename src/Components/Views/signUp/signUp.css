@@ -2,7 +2,7 @@
   background-image: url('../../../assets/background_pieces.png');
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: 42% auto;
+  background-size: 38% auto;
   z-index: 2;
   min-height: 100vh;
 }
@@ -47,6 +47,11 @@
 }
 
 .left-side-signup {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;*/
   display: flex;
   flex-direction: column;
   justify-content: center;
