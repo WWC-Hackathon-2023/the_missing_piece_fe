@@ -164,6 +164,10 @@
     flex-direction: column;
     justify-content: center;
 }
+/* 
+.pending-message {
+    color:#F2955E;
+} */
 
 /* ---------------------------- IMG STYLES ------------------------------*/
 .puzzle-img-dashboard {
