@@ -1,23 +1,20 @@
 import "./updateProfile.css";
 import { Link } from 'react-router-dom';
-import LogInButton from "../../commonComponents/logInButton/logInButton.jsx";
-import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
+import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 
 export default function UpdateProfile() {
 
     return (
         <>
-            <div className='main-container'>
-                <div className="headerHome">
-                    <SignUpButton />
-                    <LogInButton />
-                </div>
-
-                <div className="container-new-puzzle">
+            <div className="app-container">
+                <header className="headerProfile">
+                    <NavigationBar />
+                </header>
+                <div className="container-update-profile">
                     <div className="left-side">
                         <div className="form-container">
-                            <h2 className='title'>Update Profile Information</h2>
+                            <h2 className='title-update'>Update Profile Information</h2>
                             <label className='subtitles'>Name</label>
                             <input className="input-update" placeholder='Introduce your name' />
                             <label className='subtitles'>ZIP Code</label>
@@ -29,19 +26,18 @@ export default function UpdateProfile() {
                         </div>
                     </div>
                     <div className="right-side">
-                        <Link to="/index">
+                        <Link to="/updateProfile">
                             <button className="add-puzzle-button">Update Profile</button>
                         </Link>
-                        <Link to="/index">
+                        <Link to="/dashboard">
                             <button className="return-dashboard-button">Return to dashboard</button>
                         </Link>
                     </div>
-                    <div className='foo-ter'>
-                        <h4>© 2023 The Missing Piece Team</h4>
-                    </div>
-
                 </div>
+                <footer className='foo-ter-update'>
+                    <h4>© 2023 The Missing Piece Team</h4>
+                </footer>
             </div>
         </>
     );
-};
+};    
