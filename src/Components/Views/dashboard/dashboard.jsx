@@ -9,6 +9,7 @@ import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useEffect, useState } from "react";
+import { fetchDashboardData } from "../../../Services/UserServices";
 
 const MySweetAlert = withReactContent(Swal);
 
@@ -19,16 +20,16 @@ export default function Dashboard() {
   // Función para hacer la solicitud y obtener la respuesta
   useEffect(() => {
     // Mueve la lógica de fetchData aquí
-    const fetchDashboardData = async () => {
+    const fetchData = async (id) => {
       try {
-        const data = await fetchDashboardData(1); // Llama a la función del servicio API
+        const data = await fetchDashboardData(id); // Llama a la función del servicio API
         setResponseData(data);
       } catch (error) {
         console.error('Error al obtener datos:', error);
       }
     };
 
-    fetchDashboardData(); // Llama a la función que obtiene los datos cuando el componente se monta.
+    fetchData(1); // Llama a la función que obtiene los datos cuando el componente se monta.
   }, []);
 
   const handleAcceptClick = () => {
