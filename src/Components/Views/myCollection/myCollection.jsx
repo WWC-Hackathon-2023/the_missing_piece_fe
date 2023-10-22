@@ -15,6 +15,7 @@ export default function MyCollection() {
         const data = await response;
         console.log(data);
         setPuzzles(data.data);
+        console.log(data);
       } catch (error) {
         console.error(error);
       }

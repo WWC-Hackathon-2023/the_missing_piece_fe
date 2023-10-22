@@ -30,3 +30,20 @@ export const getPuzzles = async (zipCode) => {
     throw error.message;
   }
 };
+
+
+// Get puzzle with zip code
+
+export const getZpPuzzles = async (zipCode) => {
+  try {
+    const requestBody = {
+      zip_code: zipCode,
+    };
+
+    const response = await fetch("https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/1/puzzles", getRequestOptions("GET", requestBody));
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    throw error.message;
+  }
+};
