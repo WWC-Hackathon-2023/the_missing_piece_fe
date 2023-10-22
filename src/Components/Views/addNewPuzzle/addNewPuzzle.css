@@ -135,6 +135,10 @@ textarea:focus {
     padding-bottom: 10px;
 }
 
+.status-message {
+    color: #D9737B;
+}
+
 /* Estilos botones*/
 .return-dashboard-button,
 .add-puzzle-button,
