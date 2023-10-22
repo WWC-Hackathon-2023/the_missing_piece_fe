@@ -1,37 +1,94 @@
+@import '/src/index.css';
+
+.app-container-show-page {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(to top, #fae1e3 20%, #ffffff 30%);
+}
+
+.app-container-show-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 20px;
+    min-height: 100vh;
+}
+
+.header-show-page {
+    grid-column: 1 / -1;
+}
+
 .all-image-Borrow-Puzzle {
     display: flex;
     flex-direction: row;
-    width: 100%;
-    margin: 50px;
+    grid-row: 2 / 3;
+    width: 450px;
+    height: 450px;
 }
 
 .left-image-Borrow-Puzzle {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Versión de escritorio */
+@media (min-width: 768px) {
+    .left-image-Borrow-Puzzle {
+        padding-left: 20%;
+    }
+
+    .right-Puzzle-Show-Page {
+        padding-right: 20%;
+    }
 }
 
 .title-image-Borrow-Puzzle {
-    margin-top: 30px;
+    text-align: center;
 }
 
-.puzzle--image-Borrow-Puzzle {
-    width: 600px;
+.puzzle-title-show-page {
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+
+.puzzle-image-Borrow-Puzzle {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .right-Puzzle-Show-Page {
-    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    padding-right: 70px;
+    gap: 10px;
+    justify-content: center;
+    font-size: 20px;
+    padding-top: 15px;
+    align-items: right;
+    line-height: 1.2;
 }
 
 .message-Puzzle-Show-Page {
-    width: 550px;
-    font-size: 40px;
+    font-size: 25px;
+    padding-bottom: 6px;
     font-weight: bold;
-    color: #D9737B;
-    margin: 10px 0px 30px 0px;
+    color: var(--salmon);
+}
+
+.puzzleDescription,
+.pieces-total-countainer,
+.zip-code-container,
+.note-puzzle-inf {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: right;
+    line-height: 1.2;
+}
+
+.foo-ter {
+    grid-column: 1 / -1;
+    text-align: center;
 }
