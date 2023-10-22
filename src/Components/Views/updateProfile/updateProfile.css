@@ -1,3 +1,25 @@
 .input-update {
-    width: 70%;
+    width: 370px;
+}
+
+.title-update {
+    font-size: 35px;
+    padding-bottom: 10px;
+}
+
+.foo-ter-update {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #8f8686;
+    width: 100%;
+}
+
+.container-update-profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    flex: 1;
 }
