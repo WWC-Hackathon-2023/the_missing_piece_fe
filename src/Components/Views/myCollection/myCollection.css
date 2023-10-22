@@ -1,0 +1,89 @@
+.puzzle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.puzzle-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #FFF2EA;
+    width: 300px;
+}
+
+.image-collection {
+    width: 250px;
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+/* Estilos botones */
+.update-puzzle-btn {
+    color: white;
+    border-radius: 20px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+    width: 200px;
+    background-color: #1C4259;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    border: none;
+    /* Changed from border-width to border */
+}
+
+.update-puzzle-btn:hover {
+    background-color: #F2955E;
+    color: #131212;
+}
+
+.status {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.puzzle-title-collection {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.title-my-collection {
+    font-size: 35px;
+    padding-bottom: 20px;
+    padding-left: 230px;
+    padding-top: 30px;
+}
+
+/* Estilo responsive para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .puzzle-grid {
+        grid-template-columns: 1fr;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .image-collection {
+        width: 220px;
+    }
+
+    .update-puzzle-btn {
+        width: 180px;
+    }
+
+    .title-my-collection {
+        padding-left: 50px;
+    }
+}
