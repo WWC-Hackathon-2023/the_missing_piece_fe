@@ -39,7 +39,16 @@ export default function Dashboard() {
     return response.data.attributes.owner_loans;
   }
 
+  function extractUserRequests(response) {
+    if (!response || !response.data || !response.data.attributes.borrower_loans) {
+      return [];
+    }
+    return response.data.attributes.borrower_loans;
+  }
+
   const ownerPuzzles = extractOwnerLoans(responseData);
+
+  const userRequests = extractUserRequests(responseData);
 
   function renderButtons(puzzleL) {
     if (puzzleL.loan_status === "Pending") {
@@ -66,9 +75,10 @@ export default function Dashboard() {
       );
     } else if (puzzleL.loan_status === "Denied") {
       return (
-        <button className="profile-negative-btn btn">
-          Denied
-        </button>
+        <>
+          <h3>Puzzle is denied</h3>
+          <p>If you want to change it to "available" please visit My Puzzles page, and update the status of this puzzle.</p>
+        </>
       );
     }
 
@@ -187,27 +197,9 @@ export default function Dashboard() {
                 </div>
                 <div className="btn-request-div">
                   {renderButtons(puzzle)}
-                  {/* <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzle.id)}>
-                    Accept
-                  </button>
-                  <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzle.id)}>
-                    Deny
-                  </button> */}
                 </div>
               </div>
             ))}
-
-            {/* <figure className="puzzle-img-div">
-                <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
-              </figure>
-              <div className="request-info-text">
-                <h3>Puzzle Name</h3>
-                <p>Request date</p>
-              </div>
-              <div className="btn-request-div">
-                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleAcceptClick}>Accept</button>
-                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleDenyClick}>Deny</button>
-              </div> */}
           </section>
           <section className="user-requests requests">
             <div className="title-section">Puzzles I have requested</div>
@@ -225,8 +217,8 @@ export default function Dashboard() {
               </div>
               <div className="btn-request-div">
                 <button className="profile-positive-btn owner-info-btn btn">Owner Info</button>
-                {/* <button className="withdraw-request-btn btn">Withdraw Request</button>
-              <button className="returned-puzzle-btn close-request-btn btn">Returned</button> */}
+                <button className="withdraw-request-btn btn">Withdraw Request</button>
+                <button className="returned-puzzle-btn close-request-btn btn">Returned</button>
               </div>
             </div>
           </section>
