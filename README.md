@@ -50,6 +50,7 @@ The planning was executed using the GitHub Project platform, which provided a ro
 ## 5. Project
 
 Colocar vistas....
+de cada pagina
 
 
 
