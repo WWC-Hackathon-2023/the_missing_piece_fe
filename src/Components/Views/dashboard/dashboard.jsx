@@ -6,14 +6,49 @@ import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";
 import iconPerson from "../../../assets/icon_person.png";
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
+
+
+const MySweetAlert = withReactContent(Swal);
 
 export default function Dashboard() {
 
-  // aquí va lógica para poner datos del usuario
+  const handleAcceptClick = () => {
+    MySweetAlert.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to accept this request?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#D9737B',
+      cancelButtonColor: '#1C4259'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Aquí es donde colocas la lógica que se ejecutará si el usuario confirma
+        console.log("Request accepted!"); // Esto es solo un ejemplo
+      }
+    })
+  }
 
-  // aquí va lógica para traer las solicitudes de otros usuarios para pedir un puzzle
-
-  // aquí va lógica para traer las solicitudes del usuario actual para pedir puzzles
+  const handleDenyClick = () => {
+    MySweetAlert.fire({
+      title: 'Are you sure?',
+      text: 'Do you want to deny this request?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes',
+      cancelButtonText: 'No',
+      confirmButtonColor: '#D9737B',
+      cancelButtonColor: '#1C4259'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Aquí es donde colocas la lógica que se ejecutará si el usuario confirma
+        console.log("Request denied!"); // Esto es solo un ejemplo
+      }
+    })
+  }
 
   return (
     <>
@@ -82,8 +117,8 @@ export default function Dashboard() {
                 <p>Request date</p>
               </div>
               <div className="btn-request-div">
-                <button className="profile-positive-btn accept-deny-btn btn">Accept</button>
-                <button className="close-request-btn accept-deny-btn btn">Deny</button>
+                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleAcceptClick}>Accept</button>
+                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleDenyClick}>Deny</button>
               </div>
             </div>
           </section>
