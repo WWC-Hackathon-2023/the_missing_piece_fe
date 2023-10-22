@@ -188,6 +188,12 @@ textarea:focus {
     flex-direction: column;
 }
 
+/* Estilo inputs imagenes */
+
+.image-upload {
+    display: none;
+}
+
 /* Media Query para dispositivos pequeños */
 @media (max-width: 768px) {
     .container-new-puzzle {
