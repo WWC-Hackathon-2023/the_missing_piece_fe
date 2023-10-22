@@ -55,18 +55,23 @@ export default function Dashboard() {
       );
     } else if (puzzleL.loan_status === "Accepted") {
       return (
-        <button className="profile-positive-btn btn" onClick={() => handleAcceptedClick(puzzleL.id)}>
-          Accepted
-        </button>
+        <>
+          <button className="profile-positive-btn btn"> {/* Función para dirigir a la información del que pide prestado (necesita parámetro id del usuario)*/}
+            Borrower Info
+          </button>
+          <button className="profile-positive-btn accept-deny-btn btn">  {/* Función para indicar que se retornó (patch para cambiar el status del loan)*/}
+            Returned
+          </button>
+        </>
       );
     } else if (puzzleL.loan_status === "Denied") {
       return (
-        <button className="profile-negative-btn btn" onClick={() => handleDeniedClick(puzzleL.id)}>
+        <button className="profile-negative-btn btn">
           Denied
         </button>
       );
     }
-  
+
     // Si el estado es desconocido, puedes retornar algo o un botón por defecto.
     return null;
   }
@@ -181,12 +186,13 @@ export default function Dashboard() {
                   <p>{puzzle.loan_created_at}</p>
                 </div>
                 <div className="btn-request-div">
-                  <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzle.id)}>
+                  {renderButtons(puzzle)}
+                  {/* <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzle.id)}>
                     Accept
                   </button>
                   <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzle.id)}>
                     Deny
-                  </button>
+                  </button> */}
                 </div>
               </div>
             ))}
