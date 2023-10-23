@@ -10,7 +10,7 @@ export default function Index() {
   const [puzzles, setPuzzles] = useState([]);
   const [visiblePuzzles, setVisiblePuzzles] = useState(4);
   const [expanded, setExpanded] = useState(false);
-  const [zipCode, setZipCode] = useState(""); 
+  const [zipCode, setZipCode] = useState("");
 
   const handleSearch = async () => {
     const zipCodeInput = document.querySelector('.searchZipCodeInput').value;
@@ -23,21 +23,21 @@ export default function Index() {
         const response = await getZpPuzzles(zipCode);
         const data = await response;
         console.log(data);
-        setPuzzles(data);
+        setPuzzles(data.data);
       } catch (error) {
         console.error(error);
       }
     }
-  
+
     if (zipCode) {
       fetchData();
     }
   }, [zipCode]);
-  
-  useEffect(() => {
-    console.log(puzzles); // Ver el valor actualizado de puzzles
-  }, [puzzles]);
-  
+
+  // useEffect(() => {
+  //   console.log(puzzles); // Ver el valor actualizado de puzzles
+  // }, [puzzles]);
+
   useEffect(() => {
     // Este useEffect se asegura de que los datos estén listos antes de renderizar
     if (puzzles.length > 0) {
@@ -73,28 +73,30 @@ export default function Index() {
           </Link>
         </h3>
 
-       {puzzles.length > 0 ? ( // Verifica si hay rompecabezas para mostrar
-  <div className="containerInfPuzzle">
-    {puzzles.map((puzzle) => (
-      <Link className="link-puzzle-Show-Page" to="/puzzleShowPage" key={puzzle.id}>
-        <div className="image-puzzle-zip-code">
-          <img src={puzzle.puzzle_image_url} alt={puzzle.title} className="puzzle" />
-        </div>
-        <h2 className="title-puzze-inf-puzzle">{puzzle.title}</h2>
-        <h2 className="description-puzze-inf-puzzle">{puzzle.attributes.description}</h2>
-      </Link>
-    ))}
-  </div>
-) : (
-  <div className="piece-icon-box">
-    <div className="container-piece-icon">
-      <img src={piece_icon} className="piece-icon" alt="Puzzle Piece" />
-    </div>
-    <h2 className="display-available-puzzles">
-      Please enter a ZIP code to display all available puzzles.
-    </h2>
-  </div>
-)}
+        {puzzles.length > 0 ? (
+          <div className="containerInfPuzzle">
+            {puzzles.map((puzzle) => (
+              <Link className="link-puzzle-Show-Page" to="/puzzleShowPage" key={puzzle.id}>
+                <div className="image-puzzle-zip-code">
+                  <img src={puzzle.attributes.puzzle_image_url} alt={puzzle.attributes.title} className="puzzle" />
+                </div>
+                <h2 className="title-puzze-inf-puzzle">{puzzle.attributes.title}</h2>
+                <h2 className="description-puzze-inf-puzzle">{puzzle.attributes.description}</h2>
+                <p className="puzzle-status">{puzzle.attributes.status}</p>
+                <p className="puzzle-notes">{puzzle.attributes.notes}</p>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="piece-icon-box">
+            <div className="container-piece-icon">
+              <img src={piece_icon} className="piece-icon" alt="Puzzle Piece" />
+            </div>
+            <h2 className="display-available-puzzles">
+              Please enter a ZIP code to display all available puzzles.
+            </h2>
+          </div>
+        )}
         {visiblePuzzles < puzzles.length && (
           <div className="showMoreindex">
             <p className="message-show-boton">
@@ -134,7 +136,7 @@ export default function Index() {
 
 //   const handleSearch = async () => {
 //     try {
-//       const response = await getZpPuzzles(zipCode); 
+//       const response = await getZpPuzzles(zipCode);
 
 //       console.log(zipCode);
 //       const data = await response;
@@ -168,7 +170,7 @@ export default function Index() {
 //               className="searchZipCodeInput"
 //               placeholder="Enter Zip Code"
 //               value={zipCode}
-//               onChange={(event) => setZipCode(event.target.value)} 
+//               onChange={(event) => setZipCode(event.target.value)}
 //             />
 //              <button className="search-button" onClick={handleSearch}>
 //               Search
