@@ -1,5 +1,3 @@
-
-
 export function getRequestOptions(method, bodyData) {
   let requestOptions = {
     method: method,
@@ -33,9 +31,6 @@ export const getPuzzles = async (zipCode) => {
   }
 };
 
-
-// Get puzzle with zip code
-
 export const getZpPuzzles = async (zipCode) => {
   try {
     const requestBody = {
@@ -50,6 +45,26 @@ export const getZpPuzzles = async (zipCode) => {
   }
 };
 
+export const fetchDashboardData = async (userId) => {
+  try {
+    const response = await fetch(`https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/dashboard`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error al obtener datos:', error);
+    throw error; // Re-lanza el error para que pueda ser manejado por el componente.
+  }
+};
+
+export async function fetchUserPuzzles(userId) {
+  const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/puzzles`;
+
+  const response = await fetch(apiUrl);
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return await response.json();
+}
 // ----------- POST Puzzles - AddNewPuzzle -----------------------
 export const postPuzzle = async (title, description, total_pieces, notes, puzzle_image_url) => {
   try {
@@ -74,16 +89,25 @@ export const postPuzzle = async (title, description, total_pieces, notes, puzzle
   }
 };
 
+export const patchLoan = (userId, loanId, action_type) => {
+  const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/loans/${loanId}`;
 
-export const fetchDashboardData = async (userId) => {
-  try {
-    const response = await fetch(`https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/dashboard`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error('Error al obtener datos:', error);
-    throw error; // Re-lanza el error para que pueda ser manejado por el componente.
-  }
-}
+  // Datos que se enviarán en el cuerpo de la solicitud PATCH
+  const data = {
+    action_type: action_type,
+  };
 
-
+  return fetch(apiUrl, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error al enviar la solicitud PATCH');
+      }
+      return response.json();
+    });
+};
