@@ -17,6 +17,7 @@ export default function MyCollection() {
         const data = await fetchUserPuzzles(userId);
         // Actualiza el estado de los puzzles con los datos obtenidos
         setPuzzles(data.data);
+        console.log(data);
       } catch (error) {
         // Manejo de errores
         console.error('Error al obtener los puzzles del usuario:', error);
