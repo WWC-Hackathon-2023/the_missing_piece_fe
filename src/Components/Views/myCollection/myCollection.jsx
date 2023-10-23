@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import "./myCollection.css";
-import { getPuzzles } from '../../../Services/UserServices';
+import { fetchUserPuzzles } from '../../../Services/UserServices';
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
+import { Link } from 'react-router-dom';
 
 
 export default function MyCollection() {
 
-
   const [puzzles, setPuzzles] = useState([]);
 
   useEffect(() => {
+    const userId = '2'; // Reemplaza con el ID de usuario real
+
     async function fetchData() {
       try {
-        const response = await getPuzzles(12345);
-        const data = await response;
-        console.log(data);
+        const data = await fetchUserPuzzles(userId);
+        // Actualiza el estado de los puzzles con los datos obtenidos
         setPuzzles(data.data);
         console.log(data);
       } catch (error) {
-        console.error(error);
+        // Manejo de errores
+        console.error('Error al obtener los puzzles del usuario:', error);
       }
     }
+
     fetchData();
   }, []);
 
@@ -35,7 +38,9 @@ export default function MyCollection() {
           {puzzles.map((puzzle) => (
             <div key={puzzle.id} className="puzzle-item">
               <img className="image-collection" src={puzzle.attributes.puzzle_image_url} alt={puzzle.attributes.title} />
-              <button className="update-puzzle-btn">Update Puzzle</button>
+              <Link to="/editPuzzle">
+                <button className="update-puzzle-btn">Update Puzzle</button>
+              </Link>
               <h2 className='puzzle-title-collection'>{puzzle.attributes.title}</h2>
               <div className="status">
                 <h4>Status: </h4>&nbsp;<span className='status-message'>{puzzle.attributes.status}</span>
