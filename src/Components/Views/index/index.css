@@ -44,6 +44,15 @@ h2 {
   margin: 20px;
 }
 
+.collection-container{
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* column-count: 2;
+  column-gap: 20px; 
+  width: 100%; */
+}
+
 .containerInfPuzzle {
   background-color: #fff2ea;
   align-items: center;
@@ -130,7 +139,6 @@ h2 {
   /* Restablece la altura máxima para mostrar todos los elementos */
 }
 
-
 .all-index {
   margin: 20px;
 }
@@ -141,7 +149,6 @@ h2 {
   margin: 60px 20px 5px 40px;
   align-items: baseline
 }
-
 
 .title-index {
   font-size: 48px;
@@ -171,6 +178,13 @@ h2 {
   font-weight: bold;
   width: 180px;
   margin: 20px;
+}
+
+.search-button:hover {
+  background-color: var(--salmon);
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: black
 }
 
 .link-search-zip-code {
@@ -229,7 +243,6 @@ h2 {
   font-size: 20px;
   font-weight: lighter;
 }
-
 
 /*piece icon*/
 

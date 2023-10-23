@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import { postPuzzle } from '../../../Services/UserServices';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddNewPuzzle() {
     const [image, setImage] = useState(null);
@@ -12,6 +14,7 @@ export default function AddNewPuzzle() {
     const descriptionRef = React.createRef();
     const piecesRef = React.createRef();
     const notesRef = React.createRef();
+    const navigate = useNavigate();
 
     const handleImageUploadToCloudinary = (imageData) => {
         const formData = new FormData();
@@ -32,6 +35,8 @@ export default function AddNewPuzzle() {
     };
 
     const handleImageUpload = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         const file = e.target.files[0];
         if (file) {
             const reader = new FileReader();
@@ -48,21 +53,47 @@ export default function AddNewPuzzle() {
         document.getElementById('image-upload').value = '';  // Reset the input value
     };
 
-    const handleSubmit = async () => {
-        try {
-            const response = await postPuzzle(
-                titleRef.current.value,
-                descriptionRef.current.value,
-                piecesRef.current.value,
-                notesRef.current.value,
-                image
-            );
-            console.log("Puzzle añadido con éxito:", response);
-            // Aquí puedes hacer alguna redirección o mostrar un mensaje de éxito
-        } catch (error) {
-            console.error("Error al añadir el puzzle:", error);
-            // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Previene que el formulario actualice la página
+        navigate("/index");
+        if (!validateInputs()) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Campos incompletos',
+                text: 'Por favor, completa todos los campos obligatorios.',
+            });
+        } else {
+            try {
+                const response = await postPuzzle(
+                    titleRef.current.value,
+                    descriptionRef.current.value,
+                    piecesRef.current.value,
+                    notesRef.current.value,
+                    image
+                );
+                console.log("Puzzle añadido con éxito:", response);
+                // Redirige a la página de inicio después de agregar el rompecabezas
+            } catch (error) {
+                console.error("Error al añadir el puzzle:", error);
+            }
         }
+    };
+
+    const validateInputs = () => {
+        // Aquí se agregan todos los campos obligatorios
+        const inputs = [titleRef, descriptionRef, piecesRef, image];
+
+        for (const input of inputs) {
+            if (input.current) {
+                if (!input.current.value.trim()) {
+                    return false;
+                }
+            } else if (!input) {
+                return false;
+            }
+        }
+        return true;
     };
 
     return (
@@ -76,7 +107,8 @@ export default function AddNewPuzzle() {
                     <div className="left-side">
                         <div>
 
-                            <form className="form-container">
+                            <form className="form-container" onSubmit={(e) => e.preventDefault()}>
+
                                 <h2 className='title-new-puzzle'>Add a new puzzle</h2>
                                 <input ref={titleRef} className='input' placeholder='Add a title for your puzzle' />
                                 <textarea ref={descriptionRef} className='text-area' placeholder='Add a description' />
@@ -114,9 +146,7 @@ export default function AddNewPuzzle() {
                             </button>
                         </div>
 
-                        <Link to="/index">
-                            <button type="submit" className="add-puzzle-button" onClick={handleSubmit}>Add New Puzzle</button>
-                        </Link>
+                        <button type="button" className="add-puzzle-button" onClick={handleSubmit}>Add New Puzzle</button>
 
                         <Link to="/index">
                             <button className="return-dashboard-button">Return to dashboard</button>
