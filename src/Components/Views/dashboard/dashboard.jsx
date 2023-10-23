@@ -1,6 +1,6 @@
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-import puzzle_10 from "../../../assets/puzzle_10.jpg";
+import { useParams } from "react-router-dom";
 import zipIcon from "../../../assets/zip_icon.png";
 import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";
@@ -15,6 +15,7 @@ const MySweetAlert = withReactContent(Swal);
 
 export default function Dashboard() {
 
+  const [action_type, setAction_type] = useState(['deny', 'accept', 'withdraw', 'close']);
   const [responseData, setResponseData] = useState(null);
 
   // Función para hacer la solicitud y obtener la respuesta
@@ -39,36 +40,78 @@ export default function Dashboard() {
     return response.data.attributes.owner_loans;
   }
 
+  function extractUserRequests(response) {
+    if (!response || !response.data || !response.data.attributes.borrower_loans) {
+      return [];
+    }
+    return response.data.attributes.borrower_loans;
+  }
+
   const ownerPuzzles = extractOwnerLoans(responseData);
 
-  function renderButtons(puzzleL) {
-    if (puzzleL.loan_status === "Pending") {
+  const puzzlesUserRequests = extractUserRequests(responseData);
+
+  function renderButtonsRequestedToMe(puzzleRequestedToMe) {
+    if (puzzleRequestedToMe.loan_status === "Pending") {
       return (
         <>
-          <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzleL.id)}>
+          <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzleRequestedToMe.id)}>
             Accept
           </button>
-          <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzleL.id)}>
+          <button className="close-request-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzleRequestedToMe.id)}>
             Deny
           </button>
         </>
       );
-    } else if (puzzleL.loan_status === "Accepted") {
+    } else if (puzzleRequestedToMe.loan_status === "Accepted") {
       return (
         <>
           <button className="profile-positive-btn btn"> {/* Función para dirigir a la información del que pide prestado (necesita parámetro id del usuario)*/}
             Borrower Info
           </button>
-          <button className="profile-positive-btn accept-deny-btn btn">  {/* Función para indicar que se retornó (patch para cambiar el status del loan)*/}
+          <button className="close-request-btn accept-deny-btn btn">  {/* Función para indicar que se retornó (patch para cambiar el status del loan)*/}
             Returned
           </button>
         </>
       );
-    } else if (puzzleL.loan_status === "Denied") {
+    } else if (puzzleRequestedToMe.loan_status === "Denied") {
       return (
-        <button className="profile-negative-btn btn">
-          Denied
-        </button>
+        <>
+          <h3>Puzzle is denied</h3>
+          <p>If you want to change it to "available" please visit My Puzzles page, and update the status of this puzzle.</p>
+        </>
+      );
+    }
+
+    // Si el estado es desconocido, puedes retornar algo o un botón por defecto.
+    return null;
+  }
+
+  function renderButtonsIRequested(puzzleIRequested) {
+    if (puzzleIRequested.loan_status === "Pending") {
+      return (
+        <>
+          <button className="close-request-btn accept-deny-btn btn">
+            Withdraw request
+          </button>
+        </>
+      );
+    } else if (puzzleIRequested.loan_status === "Accepted") {
+      return (
+        <>
+          <button className="profile-positive-btn btn"> {/* Función para dirigir a la información del que pide prestado (necesita parámetro id del usuario)*/}
+            Owner Info
+          </button>
+          <button className="close-request-btn accept-deny-btn btn">  {/* Función para indicar que se retornó (patch para cambiar el status del loan)*/}
+            Returned
+          </button>
+        </>
+      );
+    } else if (puzzleIRequested.loan_status === "Denied") {
+      return (
+        <>
+          <h3>Puzzle currently not available</h3>
+        </>
       );
     }
 
@@ -174,7 +217,6 @@ export default function Dashboard() {
             </div>
           </section>
           <section className="requests-for-user requests">
-            {/* Aquí habrá que ver si estos divs se tienen que cambiar, porque lo que muestran dependerá del status del puzzle */}
             <div className="title-section">Request to Borrow My Puzzles</div>
             {ownerPuzzles.map((puzzle, index) => (
               <div className="puzzle-info-container" key={index}>
@@ -182,53 +224,33 @@ export default function Dashboard() {
                   <img className="puzzle-img-dashboard" src={puzzle.puzzle_image_url} alt={puzzle.puzzle_title} />
                 </figure>
                 <div className="request-info-text">
+                  <h3>Puzzle is {puzzle.loan_status}</h3>
                   <h3>{puzzle.puzzle_title}</h3>
                   <p>{puzzle.loan_created_at}</p>
                 </div>
                 <div className="btn-request-div">
-                  {renderButtons(puzzle)}
-                  {/* <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleAcceptClick(puzzle.id)}>
-                    Accept
-                  </button>
-                  <button className="profile-positive-btn accept-deny-btn btn" onClick={() => handleDenyClick(puzzle.id)}>
-                    Deny
-                  </button> */}
+                  {renderButtonsRequestedToMe(puzzle)}
                 </div>
               </div>
             ))}
-
-            {/* <figure className="puzzle-img-div">
-                <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
-              </figure>
-              <div className="request-info-text">
-                <h3>Puzzle Name</h3>
-                <p>Request date</p>
-              </div>
-              <div className="btn-request-div">
-                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleAcceptClick}>Accept</button>
-                <button className="profile-positive-btn accept-deny-btn btn" onClick={handleDenyClick}>Deny</button>
-              </div> */}
           </section>
           <section className="user-requests requests">
             <div className="title-section">Puzzles I have requested</div>
-            <div className="puzzle-info-container">
-              <figure className="puzzle-img-div">
-                <img className="puzzle-img-dashboard" src={puzzle_10} alt="puzzle" />
-              </figure>
-              <div className="request-info-text">
-                <h3>Puzzle Name</h3>
-                <p>Request date</p>
+            {puzzlesUserRequests.map((puzzle, index) => (
+              <div className="puzzle-info-container" key={index}>
+                <figure className="puzzle-img-div">
+                  <img className="puzzle-img-dashboard" src={puzzle.puzzle_image_url} alt={puzzle.puzzle_title} />
+                </figure>
+                <div className="request-info-text">
+                  <h3>Puzzle is {puzzle.loan_status}</h3>
+                  <h3>{puzzle.puzzle_title}</h3>
+                  <p>{puzzle.loan_created_at}</p>
+                </div>
+                <div className="btn-request-div">
+                  {renderButtonsIRequested(puzzle)}
+                </div>
               </div>
-              <div className="info-request-puzzle">
-                <h3> {/* Título del puzzle*/} </h3>
-                <p> {/* Fecha de solicitud del puzzle */} </p>
-              </div>
-              <div className="btn-request-div">
-                <button className="profile-positive-btn owner-info-btn btn">Owner Info</button>
-                {/* <button className="withdraw-request-btn btn">Withdraw Request</button>
-              <button className="returned-puzzle-btn close-request-btn btn">Returned</button> */}
-              </div>
-            </div>
+            ))}
           </section>
         </main>
         <div className="foo-ter">
