@@ -1,6 +1,6 @@
 import "./dashboard.css";
 import React from 'react';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import zipIcon from "../../../assets/zip_icon.png";
 import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";

@@ -60,8 +60,8 @@ export default function AddNewPuzzle() {
         if (!validateInputs()) {
             Swal.fire({
                 icon: 'warning',
-                title: 'Campos incompletos',
-                text: 'Por favor, completa todos los campos obligatorios.',
+                title: 'Incomplete Fields',
+                text: 'Please fill in all the required fields.',
             });
         } else {
             try {
@@ -72,10 +72,9 @@ export default function AddNewPuzzle() {
                     notesRef.current.value,
                     image
                 );
-                console.log("Puzzle añadido con éxito:", response);
-                // Redirige a la página de inicio después de agregar el rompecabezas
+                console.log("Puzzle added successfully:", response);
             } catch (error) {
-                console.error("Error al añadir el puzzle:", error);
+                console.error("Error adding the puzzle:", error);
             }
         }
     };
@@ -112,7 +111,18 @@ export default function AddNewPuzzle() {
                                 <h2 className='title-new-puzzle'>Add a new puzzle</h2>
                                 <input ref={titleRef} className='input' placeholder='Add a title for your puzzle' />
                                 <textarea ref={descriptionRef} className='text-area' placeholder='Add a description' />
-                                <input ref={piecesRef} className='input' placeholder='Total pieces' />
+                                <input
+                                    ref={piecesRef}
+                                    type="text"
+                                    className='input'
+                                    placeholder='Total pieces'
+                                    onKeyDown={(e) => {
+                                        if (!/[0-9]/.test(e.key) && e.key !== "Backspace" && e.key !== "Delete" && e.key !== "ArrowLeft" && e.key !== "ArrowRight") {
+                                            e.preventDefault();
+                                        }
+                                    }}
+
+                                />
                                 <textarea ref={notesRef} className='text-area' placeholder='Add any notes ...' />
 
                                 {/*<label className='subtitles'>Title</label>
