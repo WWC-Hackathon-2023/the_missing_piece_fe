@@ -32,16 +32,6 @@
     align-items: left;
 }
 
-/* Versión de escritorio */
-@media (min-width: 768px) {
-    .left-side {
-        padding-left: 30%;
-    }
-
-    .rigth-side {
-        padding-right: 60%;
-    }
-}
 
 /* Media Query para dispositivos pequeños */
 @media (max-width: 768px) {
@@ -107,7 +97,7 @@ textarea:focus {
 }
 
 .input {
-    width: 100%;
+    width: 400px;
 }
 
 .text-area {
@@ -187,6 +177,12 @@ textarea:focus {
 .right-side {
     display: flex;
     flex-direction: column;
+}
+
+/* Estilo inputs imagenes */
+
+.image-upload {
+    display: none;
 }
 
 /* Media Query para dispositivos pequeños */

@@ -3,6 +3,7 @@ import "./myCollection.css";
 import { getPuzzles } from '../../../Services/UserServices';
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
+
 export default function MyCollection() {
 
 
