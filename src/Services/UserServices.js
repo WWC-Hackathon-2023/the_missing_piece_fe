@@ -19,7 +19,7 @@ export function getRequestOptions(method, bodyData) {
   return requestOptions;
 }
 
-export const getPuzzles = async (zipCode) => {
+export const getPuzzlesByZipCode = async (zipCode) => {
   try {
     const requestBody = {
       zip_code: zipCode,
@@ -50,6 +50,15 @@ export const getZpPuzzles = async (zipCode) => {
   }
 };
 
+export async function fetchUserPuzzles(userId) {
+  const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/puzzles`;
+
+  const response = await fetch(apiUrl);
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return await response.json();
+}
 // ----------- POST Puzzles - AddNewPuzzle -----------------------
 export const postPuzzle = async (title, description, total_pieces, notes, puzzle_image_url) => {
   try {
@@ -74,6 +83,14 @@ export const postPuzzle = async (title, description, total_pieces, notes, puzzle
   }
 };
 
+export const patchLoan = (userId, loanId, action_type) => {
+  const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/loans/${loanId}`;
+
+  // Datos que se enviarán en el cuerpo de la solicitud PATCH
+  const data = {
+    action_type: action_type,
+  };
+
 
 export const fetchDashboardData = async (userId) => {
   try {
@@ -86,4 +103,20 @@ export const fetchDashboardData = async (userId) => {
   }
 }
 
+
+
+  return fetch(apiUrl, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error al enviar la solicitud PATCH');
+      }
+      return response.json();
+    });
+};
 
