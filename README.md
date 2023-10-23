@@ -49,10 +49,18 @@ The planning was executed using the GitHub Project platform, which provided a ro
 
 ## 5. Project
 
-Colocar vistas....
+Deployment link: https://the-missing-piece.vercel.app/
 
-
-
+<img width="833" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/878001b7-aecb-412b-965e-6bc85666b93d">
+<img width="857" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/9ae5d548-09df-4517-afc7-cbbefc7a2b39">
+<img width="857" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/de37fada-02db-4615-b3a5-6ff65eed1f7e">
+<img width="856" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/ed6635ea-6048-44b1-a24a-aff25b9af653">
+<img width="854" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/0abc2e7a-80ce-4d20-a08e-6662d29fca66">
+<img width="855" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/75899ec4-eebb-4cd5-bc26-46d9c8fefbb8">
+<img width="871" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/4f767229-41af-40a5-adbc-605602f87290">
+<img width="804" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/21960c1a-0a78-479b-a9e3-76256fd28018">
+<img width="737" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/3de3edda-3cd8-4653-8ad4-bb04a6f14cbb">
+<img width="873" alt="image" src="https://github.com/WWC-Hackathon-2023/the_missing_piece_fe/assets/129551206/a2339151-0125-4524-a8d5-955a19d73ab9">
 
 ## 6. Teamwork
 
