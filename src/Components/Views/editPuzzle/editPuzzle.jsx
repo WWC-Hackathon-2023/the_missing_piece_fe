@@ -1,10 +1,9 @@
 import "./editPuzzle.css";
 import { Link } from 'react-router-dom';
-import LogInButton from "../../commonComponents/logInButton/logInButton.jsx";
-import SignUpButton from "../../commonComponents/signUpButton/signUpButton.jsx";
 import Puzzle_1 from "../../../assets/puzzle_1.jpg";
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
+import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function EditPuzzle() {
     const [image, setImage] = useState(null);
@@ -29,10 +28,9 @@ export default function EditPuzzle() {
 
     return (
         <>
-            <div className='main-container'>
-                <div className="headerHome">
-                    <SignUpButton />
-                    <LogInButton />
+            <div className='app-container'>
+                <div className="headerProfile">
+                    <NavigationBar />
                 </div>
 
                 <div className="container-new-puzzle">
@@ -71,7 +69,7 @@ export default function EditPuzzle() {
                         <Link to="/index">
                             <button className="add-puzzle-button">Update Puzzle</button>
                         </Link>
-                        <Link to="/index">
+                        <Link to="/dashboard">
                             <button className="return-dashboard-button">Return to dashboard</button>
                         </Link><br></br>
                         <div className='warning-zone'>

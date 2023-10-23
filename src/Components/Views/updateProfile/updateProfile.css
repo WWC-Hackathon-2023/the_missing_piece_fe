@@ -22,4 +22,5 @@
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     flex: 1;
+    padding-left: 100px;
 }

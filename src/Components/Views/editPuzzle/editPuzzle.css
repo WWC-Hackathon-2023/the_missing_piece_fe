@@ -14,6 +14,7 @@ select {
     resize: none;
     font-family: 'League Spartan', sans-serif;
     outline: none;
+    width: 100%;
 }
 
 select option:hover {

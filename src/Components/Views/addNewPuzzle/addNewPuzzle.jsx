@@ -56,7 +56,7 @@ export default function AddNewPuzzle() {
 
     const handleSubmit = async (e) => {
         e.preventDefault(); // Previene que el formulario actualice la página
-        navigate("/index");
+
         if (!validateInputs()) {
             Swal.fire({
                 icon: 'warning',
@@ -72,6 +72,7 @@ export default function AddNewPuzzle() {
                     notesRef.current.value,
                     image
                 );
+                navigate("/dashboard");
                 console.log("Puzzle added successfully:", response);
             } catch (error) {
                 console.error("Error adding the puzzle:", error);
@@ -158,7 +159,7 @@ export default function AddNewPuzzle() {
 
                         <button type="button" className="add-puzzle-button" onClick={handleSubmit}>Add New Puzzle</button>
 
-                        <Link to="/index">
+                        <Link to="/dashboard">
                             <button className="return-dashboard-button">Return to dashboard</button>
                         </Link>
                     </div>

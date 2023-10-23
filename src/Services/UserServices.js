@@ -98,103 +98,26 @@ export const patchLoan = (userId, loanId, action_type) => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//-------- POST /login ------ Login ------
+export const loginUser = async (email, password) => {
+  try {
+    const requestBody = {
+      email: email,
+      password: password
+    };
+
+    const response = await fetch("https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/login", getRequestOptions("POST", requestBody));
+
+    if (response.status !== 201) {
+      throw new Error(`Failed to login user with status code: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    throw error.message;
+  }
+};
 
 
 // ----------- POST Users - Register New User -----------------------
@@ -222,3 +145,100 @@ export const registerUser = async (fullName, email, password, passwordConfirmati
     throw error.message;
   }
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

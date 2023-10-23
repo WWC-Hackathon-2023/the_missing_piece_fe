@@ -28,7 +28,7 @@ export default function BorrowerInfo() {
                             <UserData icon={emailIcon} label="Email" data="andrea@mail.org" />
                             <UserData icon={phoneIcon} label="Phone" data="+56 (123)4563789" />
                         </div>
-                        <Link to="/index">
+                        <Link to="/dashboard">
                             <button className="return-dashboard-button">Return to dashboard</button>
                         </Link>
                     </div>

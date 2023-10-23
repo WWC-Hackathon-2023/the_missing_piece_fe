@@ -15,11 +15,6 @@
   margin: 20px;
 }
 
-h2 {
-  font-size: 48px;
-  font-weight: bold;
-}
-
 .searchZipCodeInput {
   padding-right: 40px;
   border-radius: 20px;
@@ -44,12 +39,12 @@ h2 {
   margin: 20px;
 }
 
-.collection-container{
+.collection-container {
   display: flex;
   /* flex-direction: column; */
   flex-wrap: wrap;
   /* column-count: 2;
-  column-gap: 20px; 
+  column-gap: 20px;
   width: 100%; */
 }
 
@@ -60,7 +55,6 @@ h2 {
   width: 300px;
   padding: 10px;
   height: 300px;
-  margin: 15px;
 }
 
 .puzzle {
@@ -110,16 +104,12 @@ h2 {
 /* show more*/
 .containerInfPuzzle {
   max-height: 400px;
-  /* Establece la altura máxima inicial */
   overflow: hidden;
-  /* Oculta los elementos que excedan la altura máxima */
 }
 
 .containerImagePuzzles {
   display: inline-block;
   width: 50%;
-  /* Para que se muestren dos elementos por línea */
-  /* Otros estilos para cada imagen, como margen, espaciado, etc. */
 }
 
 /* Estilo del botón "Show More" */
@@ -136,7 +126,6 @@ h2 {
 /* Estilo adicional para los elementos ocultos */
 .containerInfPuzzle.hidden {
   max-height: none;
-  /* Restablece la altura máxima para mostrar todos los elementos */
 }
 
 .all-index {
@@ -147,20 +136,20 @@ h2 {
   display: flex;
   flex-direction: row;
   margin: 60px 20px 5px 40px;
-  align-items: baseline
+  align-items: baseline;
 }
 
 .title-index {
-  font-size: 48px;
+  font-size: 38px;
   font-weight: bold;
-  margin-right: 30px;
+  padding-right: 30px;
 }
 
 .searchZipCodeInput {
   padding-right: 40px;
   border-radius: 20px;
   height: 30px;
-  margin-right: 10px;
+  padding-right: 10px;
 }
 
 .fa-search {
@@ -177,7 +166,6 @@ h2 {
   font-size: 22px;
   font-weight: bold;
   width: 180px;
-  margin: 20px;
 }
 
 .search-button:hover {
@@ -191,7 +179,7 @@ h2 {
   text-decoration: none;
   color: #D9737B;
   font-size: 24px;
-  margin-left: 20px;
+  padding-left: 20px;
 }
 
 /* Puzzle pieces box  */
@@ -199,19 +187,14 @@ h2 {
 .piece-icon-box {
   display: flex;
   flex-direction: column;
-  /* Cambia a una dirección de columna para centrar verticalmente */
   justify-content: center;
-  /* Centra verticalmente */
   align-items: center;
-  /* Centra horizontalmente */
   width: 100%;
-  margin-left: 60px;
-  /* margin-right: 140px; */
   height: 600px;
 }
 
 .display-available-puzzles {
-  margin-bottom: 100px;
+  padding-bottom: 100px;
   font-size: 30px;
 }
 
@@ -230,7 +213,7 @@ h2 {
 .link-puzzle-Show-Page {
   text-decoration: none;
   color: #131212;
-  margin-left: 40px;
+  padding-left: 40px;
 }
 
 .title-puzze-inf-puzzle {
@@ -245,7 +228,6 @@ h2 {
 }
 
 /*piece icon*/
-
 .container-piece-icon {
   animation: spin 20s linear infinite;
   display: inline-block;
