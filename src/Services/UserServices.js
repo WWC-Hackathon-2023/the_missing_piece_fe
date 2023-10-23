@@ -31,21 +31,6 @@ export const getPuzzlesByZipCode = async (zipCode) => {
   }
 };
 
-export const getZpPuzzles = async (zipCode) => {
-  try {
-    const requestBody = {
-      zip_code: zipCode,
-    };
-
-    const response = await fetch("https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/1/puzzles", getRequestOptions("GET", requestBody));
-    return await response.json();
-  } catch (error) {
-    console.error(error.message);
-    throw error.message;
-  }
-};
-
-<<<<<<< HEAD
 export const fetchDashboardData = async (userId) => {
   try {
     const response = await fetch(`https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/dashboard`);
@@ -57,8 +42,6 @@ export const fetchDashboardData = async (userId) => {
   }
 };
 
-=======
->>>>>>> 64eb9c656281296fa9eea988dccb0be36de4d90c
 export async function fetchUserPuzzles(userId) {
   const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/puzzles`;
 
@@ -94,25 +77,12 @@ export const postPuzzle = async (title, description, total_pieces, notes, puzzle
 
 export const patchLoan = (userId, loanId, action_type) => {
   const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/loans/${loanId}`;
-<<<<<<< HEAD
-=======
 
   // Datos que se enviarán en el cuerpo de la solicitud PATCH
   const data = {
     action_type: action_type,
   };
 
->>>>>>> 64eb9c656281296fa9eea988dccb0be36de4d90c
-
-  // Datos que se enviarán en el cuerpo de la solicitud PATCH
-  const data = {
-    action_type: action_type,
-  };
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 64eb9c656281296fa9eea988dccb0be36de4d90c
   return fetch(apiUrl, {
     method: 'PATCH',
     headers: {
@@ -126,9 +96,4 @@ export const patchLoan = (userId, loanId, action_type) => {
       }
       return response.json();
     });
-<<<<<<< HEAD
 };
-=======
-};
-
->>>>>>> 64eb9c656281296fa9eea988dccb0be36de4d90c
