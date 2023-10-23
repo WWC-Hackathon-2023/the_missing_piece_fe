@@ -51,3 +51,28 @@ export async function fetchUserPuzzles(userId) {
   }
   return await response.json();
 }
+// ----------- POST Puzzles - AddNewPuzzle -----------------------
+export const postPuzzle = async (title, description, total_pieces, notes, puzzle_image_url) => {
+  try {
+    const requestBody = {
+      title: title,
+      description: description,
+      total_pieces: total_pieces,
+      notes: notes,
+      puzzle_image_url: puzzle_image_url
+    };
+
+    const response = await fetch("https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/1/puzzles", getRequestOptions("POST", requestBody));
+
+    if (response.status !== 201) {
+      throw new Error(`Failed to post puzzle with status code: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(error.message);
+    throw error.message;
+  }
+};
+
+

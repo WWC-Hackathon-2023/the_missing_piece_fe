@@ -4,6 +4,7 @@ import { fetchUserPuzzles } from '../../../Services/UserServices';
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import { Link } from 'react-router-dom';
 
+
 export default function MyCollection() {
 
   const [puzzles, setPuzzles] = useState([]);
