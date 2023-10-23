@@ -67,10 +67,13 @@ export default function Dashboard() {
     } else if (puzzleRequestedToMe.loan_status === "Accepted") {
       return (
         <>
-          <button className="profile-positive-btn btn"> {/* Función para dirigir a la información del que pide prestado (necesita parámetro id del usuario)*/}
-            Borrower Info
-          </button>
-          <button className="close-request-btn accept-deny-btn btn">  {/* Función para indicar que se retornó (patch para cambiar el status del loan)*/}
+          <Link to="/borrowerInfo">
+            <button className="profile-positive-btn btn">
+              Borrower Info
+            </button>
+          </Link>
+
+          <button className="close-request-btn accept-deny-btn btn">
             Returned
           </button>
         </>
@@ -92,9 +95,12 @@ export default function Dashboard() {
     if (puzzleIRequested.loan_status === "Pending") {
       return (
         <>
-          <button className="close-request-btn accept-deny-btn btn">
-            Withdraw request
-          </button>
+
+          <Link to="/imageBorrowPuzzle">
+            <button className="close-request-btn accept-deny-btn btn">
+              Withdraw request
+            </button>
+          </Link>
         </>
       );
     } else if (puzzleIRequested.loan_status === "Accepted") {
@@ -235,7 +241,9 @@ export default function Dashboard() {
             {ownerPuzzles.map((puzzle, index) => (
               <div className="puzzle-info-container" key={index}>
                 <figure className="puzzle-img-div">
-                  <img className="puzzle-img-dashboard" src={puzzle.puzzle_image_url} alt={puzzle.puzzle_title} />
+                  <Link to="/puzzleShowPage">
+                    <img className="puzzle-img-dashboard" src={puzzle.puzzle_image_url} alt={puzzle.puzzle_title} />
+                  </Link>
                 </figure>
                 <div className="request-info-text">
                   <h3>Puzzle is {puzzle.loan_status}</h3>
