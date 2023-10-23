@@ -17,6 +17,9 @@ export default function Login() {
     try {
       const response = await loginUser(email, password);
       if (response && response.data) {
+        // Suponiendo que el ID del usuario viene en response.data.userId
+        localStorage.setItem('userId', response.data.userId);
+
         navigate('/dashboard');
       } else {
         Swal.fire({
@@ -36,6 +39,7 @@ export default function Login() {
       });
     }
   };
+
 
 
 
