@@ -5,6 +5,8 @@ import React, { useState } from 'react';
 import "./signUp.css";
 import { registerUser } from '../../../Services/UserServices';
 import { useNavigate, Link } from "react-router-dom";
+import Swal from 'sweetalert2';
+
 
 export default function SignUp() {
   const [fullName, setFullName] = useState('');
@@ -12,13 +14,18 @@ export default function SignUp() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage] = useState('');
   const navigate = useNavigate();
   const [passwordConfirmation, setPasswordConfirmation] = useState(''); // Estado para confirmación de contraseña
 
   const handleSignUp = async () => {
     if (password !== passwordConfirmation) {
-      setErrorMessage('Passwords do not match');
+      Swal.fire({
+        title: 'Error!',
+        text: 'Passwords dont match.',
+        icon: 'error',
+        confirmButtonText: 'Accept',
+      });
       return;
     }
 
@@ -26,9 +33,15 @@ export default function SignUp() {
       await registerUser(fullName, email, password, passwordConfirmation, zipCode, phone);
       navigate('/dashboard');
     } catch (error) {
-      setErrorMessage(error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'There was a problem to signup.',
+        icon: 'error',
+        confirmButtonText: 'Aceept',
+      });
     }
   };
+
 
   return (
     <>

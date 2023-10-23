@@ -12,11 +12,12 @@ import { useEffect, useState } from "react";
 import { fetchDashboardData, patchLoan } from "../../../Services/UserServices";
 
 
+
 const MySweetAlert = withReactContent(Swal);
 
 export default function Dashboard() {
 
-  const [action_type, setAction_type] = useState(['deny', 'accept', 'withdraw', 'close']);
+  // const [action_type, setAction_type] = useState(['deny', 'accept', 'withdraw', 'close']);
   const [responseData, setResponseData] = useState(null);
 
   // Función para hacer la solicitud y obtener la respuesta
