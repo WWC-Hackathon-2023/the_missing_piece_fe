@@ -1,6 +1,6 @@
 import "./dashboard.css";
 import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import PropTypes from 'prop-types';
 import zipIcon from "../../../assets/zip_icon.png";
 import emailIcon from "../../../assets/email.png";
 import phoneIcon from "../../../assets/phone.png";
@@ -9,7 +9,7 @@ import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useEffect, useState } from "react";
-import { fetchDashboardData } from "../../../Services/UserServices";
+import { fetchDashboardData, patchLoan } from "../../../Services/UserServices";
 
 const MySweetAlert = withReactContent(Swal);
 
@@ -131,6 +131,19 @@ export default function Dashboard() {
       cancelButtonColor: '#1C4259'
     }).then((result) => {
       if (result.isConfirmed) {
+        const userId = 1;
+        const loanId = 2;
+
+        // Llama a la función del servicio para realizar la solicitud PATCH
+        patchLoan(userId, loanId, 'accept')
+          .then((data) => {
+            console.log('Request accepted:', data);
+            // Realiza las acciones necesarias después de una solicitud exitosa
+          })
+          .catch((error) => {
+            console.error('Error al enviar la solicitud PATCH', error);
+            // Realiza el manejo de errores, si es necesario
+          });
         // Aquí es donde colocas la lógica que se ejecutará si el usuario confirma
         console.log("Request accepted!"); // Esto es solo un ejemplo
       }
@@ -260,3 +273,7 @@ export default function Dashboard() {
     </>
   );
 }
+
+Dashboard.propTypes = {
+  action_type: PropTypes.oneOf(['accept', 'deny', 'withdraw', 'close']).isRequired
+};
