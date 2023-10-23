@@ -1,10 +1,10 @@
 import "./index.css";
-import NavigationBar from "../../commonComponents/navigationBar/navigationBar.jsx";
 import piece_icon from "../../../assets/piece_icon.png";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import React, { useState, useEffect } from "react";
 import { getPuzzlesByZipCode } from "../../../Services/UserServices";
+import HeaderLogout from "../../../Components/commonComponents/headerLogout/headerLogout.jsx";
 
 export default function Index() {
   const [puzzles, setPuzzles] = useState([]);
@@ -53,8 +53,8 @@ export default function Index() {
   return (
     <>
       <div className='app-container'>
-        <header>
-          <NavigationBar />
+        <header className="header-show-page">
+          <HeaderLogout />
         </header>
         <div className="all-index">
           <div className="search-index-bar">
