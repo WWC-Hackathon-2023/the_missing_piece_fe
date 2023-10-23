@@ -4,7 +4,7 @@ import piece_icon from "../../../assets/piece_icon.png";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import React, { useState, useEffect } from "react";
-import { getZpPuzzles } from "../../../Services/UserServices";
+import { getPuzzlesByZipCode  } from "../../../Services/UserServices";
 
 export default function Index() {
   const [puzzles, setPuzzles] = useState([]);
@@ -21,7 +21,7 @@ export default function Index() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await getZpPuzzles(zipCode);
+        const response = await getPuzzlesByZipCode (zipCode);
         const data = await response;
         console.log(data.data);
         setPuzzles(data.data);
