@@ -1,24 +1,26 @@
 import React, { useState, useEffect } from 'react';
 import "./myCollection.css";
-import { getPuzzles } from '../../../Services/UserServices';
+import { fetchUserPuzzles, getPuzzles } from '../../../Services/UserServices';
 import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 
 export default function MyCollection() {
 
-
   const [puzzles, setPuzzles] = useState([]);
 
   useEffect(() => {
+    const userId = '2'; // Reemplaza con el ID de usuario real
+
     async function fetchData() {
       try {
-        const response = await getPuzzles(12345);
-        const data = await response;
-        console.log(data);
+        const data = await fetchUserPuzzles(userId);
+        // Actualiza el estado de los puzzles con los datos obtenidos
         setPuzzles(data.data);
       } catch (error) {
-        console.error(error);
+        // Manejo de errores
+        console.error('Error al obtener los puzzles del usuario:', error);
       }
     }
+
     fetchData();
   }, []);
 

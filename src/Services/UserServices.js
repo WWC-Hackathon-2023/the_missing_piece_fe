@@ -17,7 +17,7 @@ export function getRequestOptions(method, bodyData) {
   return requestOptions;
 }
 
-export const getPuzzles = async (zipCode) => {
+export const getPuzzlesByZipCode = async (zipCode) => {
   try {
     const requestBody = {
       zip_code: zipCode,
@@ -41,3 +41,13 @@ export const fetchDashboardData = async (userId) => {
     throw error; // Re-lanza el error para que pueda ser manejado por el componente.
   }
 };
+
+export async function fetchUserPuzzles(userId) {
+  const apiUrl = `https://intense-peak-28151-a26a6d29b3a6.herokuapp.com/api/v1/users/${userId}/puzzles`;
+
+  const response = await fetch(apiUrl);
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  return await response.json();
+}
