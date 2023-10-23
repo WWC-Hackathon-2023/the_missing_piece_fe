@@ -4,16 +4,17 @@ import piece_icon from "../../../assets/piece_icon.png";
 import { Link } from "react-router-dom";
 import "font-awesome/css/font-awesome.css";
 import React, { useState, useEffect } from "react";
-import { getZpPuzzles } from '../../../Services/UserServices';
+import { getZpPuzzles } from "../../../Services/UserServices";
 
 export default function Index() {
   const [puzzles, setPuzzles] = useState([]);
   const [visiblePuzzles, setVisiblePuzzles] = useState(4);
   const [expanded, setExpanded] = useState(false);
-  const [zipCode, setZipCode] = useState(""); 
+  const [zipCode, setZipCode] = useState("");
+  
 
   const handleSearch = async () => {
-    const zipCodeInput = document.querySelector('.searchZipCodeInput').value;
+    const zipCodeInput = document.querySelector(".searchZipCodeInput").value;
     setZipCode(zipCodeInput);
   };
 
@@ -22,22 +23,22 @@ export default function Index() {
       try {
         const response = await getZpPuzzles(zipCode);
         const data = await response;
-        console.log(data);
-        setPuzzles(data);
+        console.log(data.data);
+        setPuzzles(data.data);
       } catch (error) {
         console.error(error);
       }
     }
-  
+
     if (zipCode) {
       fetchData();
     }
   }, [zipCode]);
-  
+
   useEffect(() => {
     console.log(puzzles); // Ver el valor actualizado de puzzles
   }, [puzzles]);
-  
+
   useEffect(() => {
     // Este useEffect se asegura de que los datos estén listos antes de renderizar
     if (puzzles.length > 0) {
@@ -60,7 +61,9 @@ export default function Index() {
           <div className="search-container">
             <input className="searchZipCodeInput" placeholder="" />
 
-            <button className="search-button" onClick={handleSearch}>Search</button>
+            <button className="search-button" onClick={handleSearch}>
+              Search
+            </button>
           </div>
         </div>
 
@@ -73,16 +76,26 @@ export default function Index() {
           </Link>
         </h3>
 
-       {puzzles.length > 0 ? ( // Verifica si hay rompecabezas para mostrar
-  <div className="containerInfPuzzle">
-    {puzzles.map((puzzle) => (
-      <Link className="link-puzzle-Show-Page" to="/puzzleShowPage" key={puzzle.id}>
-        <div className="image-puzzle-zip-code">
-          <img src={puzzle.puzzle_image_url} alt={puzzle.title} className="puzzle" />
-        </div>
-        <h2 className="title-puzze-inf-puzzle">{puzzle.title}</h2>
-        <h2 className="description-puzze-inf-puzzle">{puzzle.attributes.description}</h2>
-      </Link>
+        {puzzles.length > 0 ? (
+  <div className="collection-container">
+    {puzzles.slice(0, visiblePuzzles).map((puzzle) => (
+      <div className="containerInfPuzzle" key={puzzle.id}>
+        <Link className="link-puzzle-Show-Page" to="/puzzleShowPage">
+          <div className="image-puzzle-zip-code">
+            <img
+              src={puzzle.attributes.puzzle_image_url}
+              alt={puzzle.attributes.title}
+              className="puzzle"
+            />
+          </div>
+          <h2 className="title-puzze-inf-puzzle">
+            {puzzle.attributes.title}
+          </h2>
+          <h2 className="description-puzze-inf-puzzle">
+            {puzzle.attributes.description}
+          </h2>
+        </Link>
+      </div>
     ))}
   </div>
 ) : (
@@ -95,16 +108,16 @@ export default function Index() {
     </h2>
   </div>
 )}
-        {visiblePuzzles < puzzles.length && (
-          <div className="showMoreindex">
-            <p className="message-show-boton">
-              Continue exploring amazing puzzles
-            </p>
-            <button className="showMoreButton" onClick={handleShowMore}>
-              {expanded ? "Show Less" : "Show More"}
-            </button>
-          </div>
-        )}
+{visiblePuzzles < puzzles.length && (
+  <div className="showMoreindex">
+    <p className="message-show-boton">
+      Continue exploring amazing puzzles
+    </p>
+    <button className="showMoreButton" onClick={handleShowMore}>
+      {expanded ? "Show More" : "Show More"}
+    </button>
+  </div>
+)}
       </div>
       <footer className="foo-ter">
         <h4>© 2023 The Missing Piece Team</h4>
@@ -112,195 +125,3 @@ export default function Index() {
     </>
   );
 }
-
-
-
-// import "./index.css";
-// import NavigationBar from "../../commonComponents/navigationBar/navigationBar.jsx";
-// import { Link } from "react-router-dom";
-// import "font-awesome/css/font-awesome.css";
-// import React, { useState } from "react";
-// import { getZpPuzzles } from "../../../Services/UserServices";
-
-// export default function Index() {
-//   const [puzzles, setPuzzles] = useState([]);
-//   const [visiblePuzzles, setVisiblePuzzles] = useState(4);
-//   const [expanded, setExpanded] = useState(false);
-//   const [zipCode, setZipCode] = useState("");
-
-//   const handleZipCodeChange = (event) => {
-//     setZipCode(event.target.value);
-//   };
-
-//   const handleSearch = async () => {
-//     try {
-//       const response = await getZpPuzzles(zipCode); 
-
-//       console.log(zipCode);
-//       const data = await response;
-//       if (data.success) {
-//         setPuzzles(data.data);
-//         console.log(data);
-//       } else {
-//         setPuzzles([]); // No se encontraron rompecabezas para el código postal
-//       }
-//     } catch (error) {
-//       console.error(error);
-//       setPuzzles([]); // Error en la solicitud, establece el estado a una matriz vacía
-//     }
-//   };
-
-//   const handleShowMore = () => {
-//     setExpanded(true);
-//     setVisiblePuzzles((prevVisiblePuzzles) => prevVisiblePuzzles + 4);
-//   };
-
-//   return (
-//     <>
-//       <header>
-//         <NavigationBar />
-//       </header>
-//       <div className="all-index">
-//         <div className="search-index-bar">
-//           <h2 className="title-index">Explore Puzzles by Zip Code</h2>
-//           <div className="search-container">
-//             <input
-//               className="searchZipCodeInput"
-//               placeholder="Enter Zip Code"
-//               value={zipCode}
-//               onChange={(event) => setZipCode(event.target.value)} 
-//             />
-//              <button className="search-button" onClick={handleSearch}>
-//               Search
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="title-show-puzzles-box">
-//           <h2 className="Puzzles-zip-code">Puzzles in Your Zip Code</h2>
-//         </div>
-
-//         <Link className="link-puzzle-Show-Page" to="/puzzleShowPage">
-//           <div className="containerInfPuzzle">
-//             {puzzles.slice(0, visiblePuzzles).map((puzzle) => (
-//               <div className="containerImagePuzzles" key={puzzle.id}>
-//                 <img
-//                   src={puzzle.imageUrl}
-//                   className="puzzle"
-//                   alt={puzzle.name}
-//                 />
-//               </div>
-//             ))}
-//           </div>
-//         </Link>
-
-//         {visiblePuzzles < puzzles.length && (
-//           <div className="showMoreindex">
-//             <p className="message-show-boton">
-//               Continue exploring amazing puzzles
-//             </p>
-//             <button className="showMoreButton" onClick={handleShowMore}>
-//               {expanded ? "Show Less" : "Show More"}
-//             </button>
-//           </div>
-//         )}
-//       </div>
-//       <footer className="foo-ter">
-//         <h4>© 2023 The Missing Piece Team</h4>
-//       </footer>
-//     </>
-//   );
-// }
-
-
-
-// import "./index.css";
-// import NavigationBar from "../../commonComponents/navigationBar/navigationBar.jsx";
-// import piece_icon from "../../../assets/piece_icon.png";
-// import { Link } from "react-router-dom";
-// import "font-awesome/css/font-awesome.css";
-// import React, { useState } from "react";
-// import { getZpPuzzles } from "../../../Services/UserServices";
-
-// export default function Index() {
-//   const [puzzles, setPuzzles] = useState([]);
-//   const [visiblePuzzles, setVisiblePuzzles] = useState(4);
-//   const [expanded, setExpanded] = useState(false);
-//   const [zipCode, setZipCode] = useState("");
-
-//   const handleZipCodeChange = (event) => {
-//     setZipCode(event.target.value);
-//   };
-
-//   const handleSearch = async () => {
-//     try {
-//       const response = await getZpPuzzles(zipCode);
-//       const data = await response;
-//       setPuzzles(data.data);
-//     } catch (error) {
-//       console.error(error);
-//     }
-//   };
-
-//   const handleShowMore = () => {
-//     setExpanded(true);
-//     setVisiblePuzzles((prevVisiblePuzzles) => prevVisiblePuzzles + 4);
-//   };
-
-//   return (
-//     <>
-//       <header>
-//         <NavigationBar />
-//       </header>
-//       <div className="all-index">
-//         <div className="search-index-bar">
-//           <h2 className="title-index">Explore Puzzles by Zip Code</h2>
-//           <div className="search-container">
-//             <input
-//               className="searchZipCodeInput"
-//               placeholder="Enter Zip Code"
-//               value={zipCode}
-//               onChange={handleZipCodeChange} // Agregar el evento onChange
-//             />
-
-//             <button className="search-button" onClick={handleSearch}>
-//               Search
-//             </button>
-//           </div>
-//         </div>
-
-//         <div className="title-show-puzzles-box">
-//           <h2 className="Puzzles-zip-code">Puzzles in Your Zip Code</h2>
-//         </div>
-
-//         <Link className="link-puzzle-Show-Page" to="/puzzleShowPage">
-//           <div className="containerInfPuzzle">
-//             {puzzles.slice(0, visiblePuzzles).map((puzzle) => (
-//               <div className="containerImagePuzzles" key={puzzle.id}>
-//                 <img
-//                   src={puzzle.imageUrl}
-//                   className="puzzle"
-//                   alt={puzzle.name}
-//                 />
-//               </div>
-//             ))}
-//           </div>
-//         </Link>
-
-//         {visiblePuzzles < puzzles.length && (
-//           <div className="showMoreindex">
-//             <p className="message-show-boton">
-//               Continue exploring amazing puzzles
-//             </p>
-//             <button className="showMoreButton" onClick={handleShowMore}>
-//               {expanded ? "Show Less" : "Show More"}
-//             </button>
-//           </div>
-//         )}
-//       </div>
-//       <footer className="foo-ter">
-//         <h4>© 2023 The Missing Piece Team</h4>
-//       </footer>
-//     </>
-//   );
-// }

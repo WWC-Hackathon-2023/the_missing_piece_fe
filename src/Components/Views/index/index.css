@@ -44,6 +44,15 @@ h2 {
   margin: 20px;
 }
 
+.collection-container{
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  /* column-count: 2;
+  column-gap: 20px; 
+  width: 100%; */
+}
+
 .containerInfPuzzle {
   background-color: #fff2ea;
   align-items: center;
