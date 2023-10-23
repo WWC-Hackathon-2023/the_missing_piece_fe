@@ -1,15 +1,36 @@
 import "./signUp.css";
-import { Link } from "react-router-dom";
 import Logo from "../../commonComponents/logo/logo.jsx";
-import '@passageidentity/passage-elements/passage-register';
-
+// import '@passageidentity/passage-elements/passage-register';
+import React, { useState } from 'react';
+import "./signUp.css";
+import { registerUser } from '../../../Services/UserServices';
+import { useNavigate, Link } from "react-router-dom";
 
 export default function SignUp() {
+  const [fullName, setFullName] = useState('');
+  const [zipCode, setZipCode] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const navigate = useNavigate();
+  const [passwordConfirmation, setPasswordConfirmation] = useState(''); // Estado para confirmación de contraseña
 
+  const handleSignUp = async () => {
+    if (password !== passwordConfirmation) {
+      setErrorMessage('Passwords do not match');
+      return;
+    }
+
+    try {
+      await registerUser(fullName, email, password, passwordConfirmation, zipCode, phone);
+      navigate('/dashboard');
+    } catch (error) {
+      setErrorMessage(error);
+    }
+  };
 
   return (
-
-
     <>
       <div className='app-container'>
         <div className='backgroung-signup'>
@@ -23,41 +44,46 @@ export default function SignUp() {
               </button>
             </Link>
           </header>
-
-
           <div className="main-home">
-            <div className="left-side-signup ">
-              <h1 className='title-signup'>Join the Puzzle Community</h1>
-
-
-              {/*
-                        <input className="fullNameInput" placeholder="Full name" />
-              <input className="zip-code-input" placeholder="Zip Code" />
-              <input className="emailInput" placeholder="e-mail" />
-              <input className="phoneInput" placeholder="Phone" />
-              <input className="passwordInput" placeholder="Password" />
-              <Link to="/dashboard">
-                <button className="signUpButtonBlack">Sign Up</button>
-              </Link>
+            <div className="left-side-signup">
+              <input className="fullNameInput" placeholder="Full name" value={fullName} onChange={e => setFullName(e.target.value)} />
+              <input className="zip-code-input" placeholder="Zip Code" value={zipCode} onChange={e => setZipCode(e.target.value)} />
+              <input className="emailInput" placeholder="e-mail" value={email} onChange={e => setEmail(e.target.value)} />
+              <input className="phoneInput" placeholder="Phone" value={phone} onChange={e => setPhone(e.target.value)} />
+              <input
+                type="password"
+                className="passwordInput"
+                placeholder="Password"
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+              <input
+                type="password"
+                className="passwordInput"
+                placeholder="Confirm Password"
+                value={passwordConfirmation}
+                onChange={e => setPasswordConfirmation(e.target.value)}
+              />
+              <button className="signUpButtonBlack" onClick={handleSignUp}>Sign Up</button>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
               <p className="log-in-message">Already have an account?</p>
-              <p className="log-in-here">Log In Here</p>
-                        */}
-              <div>
+              <Link to="/login">
+                <p className="log-in-here">Log In Here</p>
+              </Link>
+              {/* <div>
                 <passage-register
                   app-id={process.env.REACT_APP_PASSAGE_APP_ID}
                 />
-              </div>
+              </div> */}
             </div>
             <div className="right-side-home">
             </div>
           </div>
-
-
           <footer className="foo-ter">
             <h4>© 2023 The Missing Piece Team</h4>
           </footer>
         </div>
-      </div>
+      </div >
     </>
   );
 }
