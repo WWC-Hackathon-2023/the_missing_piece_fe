@@ -9,7 +9,7 @@ import NavigationBar from "../../commonComponents/navigationBar/navigationBar";
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
 import { useEffect, useState } from "react";
-import { fetchDashboardData, patchLoan } from "../../../Services/UserServices";
+import { fetchDashboardData, patchLoan, getId } from "../../../Services/UserServices";
 
 
 const MySweetAlert = withReactContent(Swal);
@@ -31,7 +31,7 @@ export default function Dashboard() {
       }
     };
 
-    fetchData(1); // Llama a la función que obtiene los datos cuando el componente se monta.
+    fetchData(localStorage.getItem('userId')); // Llama a la función que obtiene los datos cuando el componente se monta.
   }, []);
 
   function extractOwnerLoans(response) {

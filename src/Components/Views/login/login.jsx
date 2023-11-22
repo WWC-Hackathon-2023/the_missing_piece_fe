@@ -18,8 +18,8 @@ export default function Login() {
       const response = await loginUser(email, password);
       if (response && response.data) {
         // Suponiendo que el ID del usuario viene en response.data.userId
-        localStorage.setItem('userId', response.data.userId);
-
+        localStorage.setItem('userId', response.data.id);
+        console.log(localStorage.getItem('userId'));
         navigate('/dashboard');
       } else {
         Swal.fire({
