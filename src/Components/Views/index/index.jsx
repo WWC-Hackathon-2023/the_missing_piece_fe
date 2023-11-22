@@ -5,13 +5,16 @@ import "font-awesome/css/font-awesome.css";
 import React, { useState, useEffect } from "react";
 import { getPuzzlesByZipCode } from "../../../Services/UserServices";
 import HeaderLogout from "../../../Components/commonComponents/headerLogout/headerLogout.jsx";
+import Navigationbar from "../../../Components/commonComponents/navigationBar/navigationBar.jsx";
 
 export default function Index() {
+
   const [puzzles, setPuzzles] = useState([]);
   const [visiblePuzzles, setVisiblePuzzles] = useState(4);
   const [expanded, setExpanded] = useState(false);
   const [zipCode, setZipCode] = useState("");
 
+const userIDTrue = localStorage.getItem("userId")!== undefined;
 
   const handleSearch = async () => {
     const zipCodeInput = document.querySelector(".searchZipCodeInput").value;
@@ -54,14 +57,17 @@ export default function Index() {
     <>
       <div className='app-container'>
         <header className="header-show-page">
-          <HeaderLogout />
+        {userIDTrue? <HeaderLogout /> : <Navigationbar />}
         </header>
         <div className="all-index">
           <div className="search-index-bar">
             <h2 className="title-index">Explore Puzzles by Zip Code</h2>
             <div className="search-container">
-              <input className="searchZipCodeInput" placeholder="" />
-
+              <input 
+              className="searchZipCodeInput" 
+              placeholder=""
+              maxLength={5}
+               />
               <button className="search-button" onClick={handleSearch}>
                 Search
               </button>
