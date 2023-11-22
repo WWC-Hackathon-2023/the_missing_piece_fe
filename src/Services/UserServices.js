@@ -112,7 +112,10 @@ export const loginUser = async (email, password) => {
       throw new Error(`Failed to login user with status code: ${response.status}`);
     }
 
-    return await response.json();
+    const responseData = await response.json();
+    console.log("User successfully logged in:", responseData);
+    return responseData;
+
   } catch (error) {
     console.error(error.message);
     throw error.message;
@@ -145,9 +148,6 @@ export const registerUser = async (fullName, email, password, passwordConfirmati
     throw error.message;
   }
 };
-
-
-
 
 
 
